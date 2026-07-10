@@ -76,6 +76,13 @@ async function handleChat(request, env) {
   });
 
   if (!llmResponse.ok) {
+    if (llmResponse.status === 429 || llmResponse.status === 402) {
+      return jsonResponse({
+        error: "LLM API limit reached. Please wait and try again.",
+        code: "LLM_API_LIMIT_REACHED"
+      }, 429);
+    }
+
     return jsonResponse({ error: "Assistant service unavailable" }, 502);
   }
 

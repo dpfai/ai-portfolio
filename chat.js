@@ -124,6 +124,13 @@
       });
 
       if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        if (errorData.code === "LLM_API_LIMIT_REACHED") {
+          if (typing) typing.remove();
+          appendMessage("bot", "LLM API limit reached. Please wait and try again.");
+          return;
+        }
+
         throw new Error("Chat request failed");
       }
 
