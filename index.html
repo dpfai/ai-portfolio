@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PD - Senior Data Scientist & AI Engineer</title>
+  <meta name="description" content="Portfolio of PD - Data Scientist specializing in causal inference, MMM, MTA, and AI-powered analytics platforms.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a; --card: #16213e; --text: #e0e0e0; --muted: #8892b0; --border: #233;
+      --quant-ai: #4ecdc4; --loss: #ffa502;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+    .nav-link { color: #c0cad8 !important; transition: color .2s; }
+    .nav-link:hover { color: #ffffff !important; }
+    .nav-link.active { color: var(--quant-ai) !important; }
+    .badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .badge-buy { background: rgba(78,205,196,.15); color: var(--quant-ai); }
+    .badge-sell { background: rgba(255,165,2,.15); color: var(--loss); }
+    .badge-hold { background: rgba(136,146,176,.15); color: var(--muted); }
+    .chart-container { position: relative; height: 400px; }
+    .filter-btn { padding: 4px 10px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all .2s; }
+    .filter-btn.active { background: var(--quant-ai); color: var(--bg); border-color: var(--quant-ai); }
+    .filter-btn:hover { border-color: var(--quant-ai); }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); padding: 8px; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 8px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
+    .glow { text-shadow: 0 0 28px rgba(78,205,196,.22); }
+    .gradient-text { background: linear-gradient(135deg, var(--quant-ai), #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .skill-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; border: 1px solid var(--border); background: rgba(78,205,196,.08); color: var(--quant-ai); margin: 3px; transition: all .2s; }
+    .skill-tag:hover { border-color: var(--quant-ai); background: rgba(78,205,196,.15); }
+    @media (max-width: 768px) { .chart-container { height: 300px; } }
+
+    .data-health { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .data-health-item { background: rgba(15, 15, 26, .72); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+    .data-health-item span { display:block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .4px; }
+    .data-health-item strong { display:block; margin-top: 3px; font-size: 13px; color: var(--text); }
+    @media (max-width: 768px) { .data-health { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+    .chat-bubble { position: fixed; bottom: 28px; right: 28px; z-index: 100; display: flex; align-items: center; gap: 10px; }
+    .chat-fab-btn { width: 72px; height: 72px; border-radius: 50%; background: var(--quant-ai); color: var(--bg); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 24px rgba(78,205,196,.35); transition: transform .2s; border: none; position: relative; }
+    .chat-fab-btn:hover { transform: scale(1.08); }
+    .chat-pulse { position: absolute; inset: -4px; border-radius: 50%; background: var(--quant-ai); opacity: .35; animation: pulse 2.5s infinite; z-index: -1; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .3; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+    .chat-hint { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; font-size: 15px; font-weight: 500; color: var(--text); white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.3); cursor: pointer; }
+    .chat-hint .arrow { color: var(--quant-ai); }
+    @media (max-width: 768px) { .chat-hint { display: none; } }
+    .chat-panel { position: fixed; bottom: 104px; right: 28px; width: 360px; max-height: 500px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: none; flex-direction: column; z-index: 100; overflow: hidden; }
+    .chat-panel.open { display: flex; }
+    .chat-header { padding: 14px 16px; border-bottom: 1px solid var(--border); font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 340px; }
+    .chat-msg { padding: 8px 12px; border-radius: 8px; font-size: 14px; max-width: 85%; word-wrap: break-word; }
+    .chat-msg.user { background: var(--quant-ai); color: var(--bg); align-self: flex-end; }
+    .chat-msg.bot { background: rgba(255,255,255,.06); color: var(--text); align-self: flex-start; }
+    .chat-input-area { padding: 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .chat-input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; color: var(--text); font-size: 14px; outline: none; }
+    .chat-input:focus { border-color: var(--quant-ai); }
+    .chat-send { padding: 8px 16px; background: var(--quant-ai); color: var(--bg); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+    .chat-send:hover { background: #6ee7d7; }
+    .chat-send:disabled { opacity: .5; cursor: not-allowed; }
+    @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); right: 16px; } }
+  </style>
+  
+</head>
+<body class="min-h-screen">
+
+  <!-- Nav -->
+    <nav class="border-b border-[#233] sticky top-0 z-50 backdrop-blur-md bg-[#0f0f1a]/90">
+      <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href="index.html" class="font-bold text-lg flex items-center gap-2 group relative">
+          <span class="text-[#4ecdc4]">◆</span> PD's Lab
+          <span class="absolute top-full left-0 mt-1 px-3 py-1.5 rounded-md bg-[#16213e] border border-[#233] text-xs text-[#8892b0] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">Building AI systems with statistical thinking</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="index.html" class="nav-link active">Home</a>
+          <div class="relative group/project">
+            <button class="nav-link flex items-center gap-1 cursor-pointer">About the Project
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" class="opacity-60"><path d="M3 4.5L6 7.5L9 4.5"/></svg>
+            </button>
+            <div class="absolute top-full right-0 mt-0 pt-2 opacity-0 invisible group-hover/project:opacity-100 group-hover/project:visible transition-all duration-200 z-50">
+              <div class="bg-[#16213e] border border-[#233] rounded-lg py-1 min-w-[140px] shadow-xl">
+                <a href="trading.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Trading</a>
+                <a href="analysis.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Analysis</a>
+                <a href="method.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Method</a>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="nav-link">About Me</a>
+          <a href="https://github.com/dpfai" target="_blank" class="nav-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+  </nav>
+
+  <!-- Hero (compact) -->
+  <section class="max-w-6xl mx-auto px-4 pt-12 pb-6">
+    <div class="flex items-center gap-6 flex-wrap">
+      <img src="assets/logo.png" alt="PD" class="w-40 h-44 object-contain shrink-0" style="filter: drop-shadow(0 0 20px rgba(167,139,250,.22));">
+      <div class="flex-1 min-w-[250px]">
+        <h1 class="text-3xl font-extrabold glow">PD <span class="text-[#8892b0] font-normal text-lg">| Senior Data Scientist & AI Engineer</span></h1>
+        <p class="text-[#8892b0] text-sm mt-1">
+          Causal inference, MMM, MTA & AI-powered analytics platforms.
+          Currently building intelligent trading systems and multi-agent orchestration.
+        </p>
+        <div class="mt-2">
+          <span class="skill-tag">Causal Inference & Experimentation</span>
+          <span class="skill-tag">MMM</span>
+          <span class="skill-tag">MTA</span>
+          <span class="skill-tag">AI Agents & LLM</span>
+          <span class="skill-tag">RAG</span>
+          <span class="skill-tag">Python / SQL / R</span>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <a href="about.html" class="px-5 py-2.5 rounded-lg border border-[#233] text-sm hover:border-[#4ecdc4] hover:text-[#4ecdc4] transition">About Me</a>
+        <a href="https://github.com/dpfai" target="_blank" class="px-5 py-2.5 rounded-lg bg-[#4ecdc4] text-[#0f0f1a] text-sm font-semibold hover:bg-[#6ee7d7] transition">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4"><div class="border-t border-[#233]"></div></div>
+
+  <!-- Project Overview -->
+  <section class="max-w-6xl mx-auto px-4 pt-6 pb-8">
+    <div class="card p-6">
+      <h2 class="text-lg font-semibold mb-2">What is this?</h2>
+      <p class="text-[#c0cad8] text-sm leading-relaxed">
+        A personal lab where I put my data science and AI engineering work into practice.
+        The centerpiece is the <span class="text-[#4ecdc4] font-medium">AI Trading Arena</span> —
+        a virtual trading competition where $10,000 starting capital and $500 weekly deposits
+        are managed by four independent strategies: an LLM-based AI Analyst, a four-vote composite
+        quant system (MA/RSI/Bollinger/Random Forest), and a DCA baseline.
+        All signals are generated, executed, and tracked automatically via a daily data pipeline
+        powered by the OpenClaw agent platform. This is not financial advice — it is a sandbox
+        for testing statistical thinking in live markets.
+      </p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <a href="trading.html" class="px-4 py-2 rounded-lg border border-[#233] text-xs hover:border-[#4ecdc4] hover:text-[#4ecdc4] transition">View Trading →</a>
+        <a href="analysis.html" class="px-4 py-2 rounded-lg border border-[#233] text-xs hover:border-[#4ecdc4] hover:text-[#4ecdc4] transition">Performance Analysis →</a>
+        <a href="method.html" class="px-4 py-2 rounded-lg border border-[#233] text-xs hover:border-[#4ecdc4] hover:text-[#4ecdc4] transition">Methodology →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trading Arena Dashboard (live) -->
+  <section class="max-w-6xl mx-auto px-4 pt-8 pb-4">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h2 class="text-lg font-semibold">AI Trading Arena <span class="badge badge-hold ml-1">Live Project</span></h2>
+        <p class="text-[#8892b0] text-xs mt-1">$10,000 virtual capital · $500 weekly deposit · 4 strategies competing head-to-head</p>
+      </div>
+      <a href="method.html" class="text-xs text-[#4ecdc4] hover:underline">How it works →</a>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 mb-8">
+    <div id="dataHealth" class="data-health"></div>
+  </section>
+
+  <!-- Equity Curve -->
+  <section class="max-w-6xl mx-auto px-4 mb-12">
+    <div class="card p-6">
+      <div class="flex items-center justify-between gap-4 mb-4 flex-wrap">
+        <h2 class="text-lg font-semibold">Portfolio Value Over Time</h2>
+        <div class="flex gap-2 flex-wrap" id="rangeFilters">
+          <button class="filter-btn active" data-range="all">All</button>
+          <button class="filter-btn" data-range="7">7D</button>
+          <button class="filter-btn" data-range="30">30D</button>
+          <button class="filter-btn" data-range="90">3M</button>
+          <button class="filter-btn" data-range="180">6M</button>
+          <button class="filter-btn" data-range="365">1Y</button>
+        </div>
+      </div>
+      <div class="chart-container"><canvas id="equityChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Strategy Cards + Insights -->
+  <section class="max-w-6xl mx-auto px-4 mb-12">
+    <h2 class="text-lg font-semibold mb-4">Strategy Overview</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="strategyCards"></div>
+
+  </section>
+
+  <!-- Latest Signals -->
+  <section class="max-w-6xl mx-auto px-4 mb-16">
+    <div class="card p-6">
+      <h2 class="text-lg font-semibold mb-4">Latest Trading Signals</h2>
+      <div id="signalsList" class="overflow-x-auto"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#233] py-8 text-center text-sm text-[#8892b0]">
+    <p>PD · Data Scientist & AI Engineer · Sunnyvale, CA</p>
+    <p class="mt-1">Trading Arena for educational purposes only. Not financial advice.</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-hint" id="chatHint" onclick="toggleChat()">
+      💬 Ask AI about PD <span class="arrow" style="font-size:18px;">&mdash;&gt;</span>
+    </div>
+    <button class="chat-fab-btn" onclick="toggleChat()">
+      <span class="chat-pulse"></span>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <span>💬 Ask me about PD</span>
+      <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi! I'm PD's AI assistant. Ask me about his projects, skills, experience, or the Trading Arena!</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" id="chatSend" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+  <script src="chart.min.js?v=20260710-01"></script>
+  <script src="common.js?v=20260710-01"></script>
+  <script src="app.js?v=20260710-01"></script>
+  <script>const CHATBOT_API_URL = "https://pd-lab-chatbot.dpfstat.workers.dev";</script>
+  <script src="chat.js"></script>
+</body>
+</html>

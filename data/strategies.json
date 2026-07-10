@@ -1,0 +1,105 @@
+[
+  {
+    "initial_cash": 10000.0,
+    "name": "QuantAI Four-Vote Composite",
+    "source": "quant_learning",
+    "sub_strategies": [
+      "MA20/MA50 crossover",
+      "RSI mean reversion",
+      "Bollinger Bands",
+      "ML direction classifier"
+    ],
+    "tickers": [
+      "SPY",
+      "QQQ",
+      "VOO",
+      "VGT",
+      "SMH"
+    ],
+    "weekly_contribution": 500.0
+  },
+  {
+    "initial_cash": 10000.0,
+    "name": "AI Analyst (OpenClaw 海岩)",
+    "source": "ai_analyst",
+    "sub_strategies": [
+      "OpenClaw technical scan",
+      "LLM operation advice"
+    ],
+    "tickers": "OpenClaw stock_analysis universe",
+    "weekly_contribution": 500.0
+  },
+  {
+    "initial_cash": 10000.0,
+    "name": "SPY Buy & Hold",
+    "source": "spy",
+    "sub_strategies": [
+      "Initial all-in buy",
+      "Tuesday DCA"
+    ],
+    "tickers": [
+      "SPY"
+    ],
+    "weekly_contribution": 500.0
+  },
+  {
+    "allocations": {
+      "SMH": 0.15,
+      "VGT": 0.425,
+      "VOO": 0.425
+    },
+    "initial_cash": null,
+    "name": "DCA Aggressive",
+    "source": "etf_aggressive",
+    "sub_strategies": [
+      "OpenClaw ETF portfolio tracker",
+      "Tuesday DCA"
+    ],
+    "tickers": [
+      "VOO",
+      "VGT",
+      "SMH"
+    ],
+    "weekly_contribution": 500.0
+  },
+  {
+    "allocations": {
+      "SMH": 0.1,
+      "VGT": 0.4,
+      "VOO": 0.5
+    },
+    "initial_cash": null,
+    "name": "DCA Balanced",
+    "source": "etf_balanced",
+    "sub_strategies": [
+      "OpenClaw ETF portfolio tracker",
+      "Tuesday DCA"
+    ],
+    "tickers": [
+      "VOO",
+      "VGT",
+      "SMH"
+    ],
+    "weekly_contribution": 500.0
+  },
+  {
+    "allocations": {
+      "SMH": 0.05,
+      "VGT": 0.35,
+      "VOO": 0.6
+    },
+    "initial_cash": null,
+    "name": "DCA Conservative",
+    "source": "etf_conservative",
+    "sub_strategies": [
+      "OpenClaw ETF portfolio tracker",
+      "Tuesday DCA"
+    ],
+    "tickers": [
+      "VOO",
+      "VGT",
+      "SMH"
+    ],
+    "weekly_contribution": 500.0
+  }
+]

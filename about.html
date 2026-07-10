@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PD - Senior Data Scientist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a; --card: #16213e; --text: #e0e0e0; --muted: #8892b0; --border: #233;
+      --quant-ai: #4ecdc4;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+    .nav-link { color: #c0cad8 !important; transition: color .2s; }
+    .nav-link:hover { color: #ffffff !important; }
+    .nav-link.active { color: var(--quant-ai) !important; }
+    .skill-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 13px; border: 1px solid var(--border); background: rgba(78,205,196,.08); color: var(--quant-ai); margin: 3px; }
+    .section-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .project-card { transition: transform .2s, box-shadow .2s; }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(78,205,196,.08); }
+    .cta-chat { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; background: var(--quant-ai); color: var(--bg); cursor: pointer; transition: all .2s; border: none; }
+    .cta-chat:hover { background: #6ee7d7; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(78,205,196,.25); }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Nav -->
+    <nav class="border-b border-[#233] sticky top-0 z-50 backdrop-blur-md bg-[#0f0f1a]/90">
+      <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href="index.html" class="font-bold text-lg flex items-center gap-2 group relative">
+          <span class="text-[#4ecdc4]">◆</span> PD's Lab
+          <span class="absolute top-full left-0 mt-1 px-3 py-1.5 rounded-md bg-[#16213e] border border-[#233] text-xs text-[#8892b0] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">Building AI systems with statistical thinking</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="relative group/project">
+            <button class="nav-link flex items-center gap-1 cursor-pointer">About the Project
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" class="opacity-60"><path d="M3 4.5L6 7.5L9 4.5"/></svg>
+            </button>
+            <div class="absolute top-full right-0 mt-0 pt-2 opacity-0 invisible group-hover/project:opacity-100 group-hover/project:visible transition-all duration-200 z-50">
+              <div class="bg-[#16213e] border border-[#233] rounded-lg py-1 min-w-[140px] shadow-xl">
+                <a href="trading.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Trading</a>
+                <a href="analysis.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Analysis</a>
+                <a href="method.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Method</a>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="nav-link active">About Me</a>
+          <a href="https://github.com/dpfai" target="_blank" class="nav-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <!-- Intro -->
+    <div class="flex items-center gap-6 mb-8">
+      <img src="assets/logo.png" alt="PD" class="w-36 h-40 object-contain shrink-0" style="filter: drop-shadow(0 0 20px rgba(167,139,250,.22));">
+      <div>
+        <h1 class="text-3xl font-extrabold">PD</h1>
+        <p class="text-[#8892b0]">Senior Data Scientist · Sunnyvale, CA</p>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="card p-6 mb-8">
+      <p class="text-[#c0cad8] leading-relaxed text-sm">
+        Senior Data Scientist specializing in statistical modeling, machine learning, and decision science.
+        Experienced in building scalable analytical platforms that simplify complex modeling and enable
+        data-driven decision making through causal inference, experimentation, and applied AI.
+        Strong background in Marketing Mix Modeling (MMM), Multi-Touch Attribution (MTA), and
+        AI-enabled analytical systems, with a focus on translating advanced modeling into practical business impact.
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">Tools and methods I work with.</p>
+    <div class="card p-6 mb-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold text-[#4ecdc4] text-sm mb-2">Core Expertise</h3>
+          <span class="skill-tag">Statistical Modeling</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Causal Inference</span>
+          <span class="skill-tag">Experimentation</span>
+        </div>
+        <div>
+          <h3 class="font-semibold text-[#4ecdc4] text-sm mb-2">Marketing Science</h3>
+          <span class="skill-tag">MMM</span>
+          <span class="skill-tag">MTA</span>
+          <span class="skill-tag">Incrementality Measurement</span>
+          <span class="skill-tag">Geo Experimentation</span>
+        </div>
+        <div>
+          <h3 class="font-semibold text-[#4ecdc4] text-sm mb-2">Applied AI</h3>
+          <span class="skill-tag">AI Platform Development</span>
+          <span class="skill-tag">AI Agents</span>
+          <span class="skill-tag">LLM Applications</span>
+          <span class="skill-tag">RAG</span>
+          <span class="skill-tag">AI Workflow Automation</span>
+        </div>
+        <div>
+          <h3 class="font-semibold text-[#4ecdc4] text-sm mb-2">Programming & Tools</h3>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">Tableau</span>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <h2 class="section-title">Side Projects</h2>
+    <p class="section-sub">Building with AI - tools and systems I've created.</p>
+
+    <!-- Project 1: Quant Learning Dashboard -->
+    <div class="card project-card p-6 mb-4">
+      <h3 class="font-semibold text-lg mb-1">Quant Learning Dashboard</h3>
+      <p class="text-[#8892b0] text-xs mb-3">Quantitative research · ML &amp; decision support</p>
+      <p class="text-[#c0cad8] text-sm leading-relaxed mb-3">
+        An AI-assisted platform for learning quantitative trading and testing research ideas. It brings
+        together market regime analysis, technical and risk metrics, watchlists, strategy backtesting,
+        machine learning experiments, and an in-product Learning Center.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-tag">Streamlit</span>
+        <span class="skill-tag">Quant Research</span>
+        <span class="skill-tag">Backtesting</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Risk Analytics</span>
+        <span class="skill-tag">Python</span>
+      </div>
+      <a href="https://github.com/dpfai/quant-learning" target="_blank" class="text-[#8892b0] text-sm hover:text-[#4ecdc4] transition mt-3 inline-flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+    </div>
+
+    <!-- Project 2: Conductor -->
+    <div class="card project-card p-6 mb-4">
+      <h3 class="font-semibold text-lg mb-1">Conductor</h3>
+      <p class="text-[#8892b0] text-xs mb-3">AI coding orchestration · Multi-agent coordination</p>
+      <p class="text-[#c0cad8] text-sm leading-relaxed mb-3">
+        A CLI tool that orchestrates multiple AI coding agents (Claude Code, Codex) to collaborate on software
+        engineering tasks. Automatically delegates work, manages context, and coordinates agent outputs -
+        essentially a project manager for AI pair programmers.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-tag">LLM Orchestration</span>
+        <span class="skill-tag">Multi-Agent</span>
+        <span class="skill-tag">CLI Tool</span>
+        <span class="skill-tag">Workflow Automation</span>
+      </div>
+      <a href="https://github.com/dpfai/conductor" target="_blank" class="text-[#8892b0] text-sm hover:text-[#4ecdc4] transition mt-3 inline-flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+    </div>
+
+    <!-- Project 3: Data Science Technical Interview Knowledge Base -->
+    <div class="card project-card p-6 mb-4">
+      <h3 class="font-semibold text-lg mb-1">Data Science Technical Interview Knowledge Base</h3>
+      <p class="text-[#8892b0] text-xs mb-3">Structured interview prep · Coding, SQL &amp; statistics</p>
+      <p class="text-[#c0cad8] text-sm leading-relaxed mb-3">
+        A structured preparation system for senior data science interviews, combining 180 curated DS/ML
+        coding problems, SQL and pandas practice, and core statistics modules covering probability,
+        inference, regression, experimentation, and causal reasoning.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Statistics</span>
+        <span class="skill-tag">Experimentation</span>
+        <span class="skill-tag">Interview Prep</span>
+      </div>
+      <a href="https://github.com/dpfai/data-science-interviews" target="_blank" class="text-[#8892b0] text-sm hover:text-[#4ecdc4] transition mt-3 inline-flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+    </div>
+
+    <!-- Project 4: AI Ads Measurement -->
+    <div class="card project-card p-6 mb-4">
+      <h3 class="font-semibold text-lg mb-1">AI Ads Measurement</h3>
+      <p class="text-[#8892b0] text-xs mb-3">Research · 🚧 Coming Soon</p>
+      <p class="text-[#c0cad8] text-sm leading-relaxed mb-3">
+        Research on how AI/LLM technologies can transform advertising measurement, attribution,
+        and marketing mix modeling. Covers Unified Marketing Measurement (UMM), AI-enhanced
+        attribution, causal inference platforms, and LLM applications in measurement workflows.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-tag">MMM</span>
+        <span class="skill-tag">MTA</span>
+        <span class="skill-tag">Causal Inference</span>
+        <span class="skill-tag">Geo Experimentation</span>
+        <span class="skill-tag">LLM Applications</span>
+      </div>
+      <a href="https://github.com/dpfai/ai-ads-measurement" target="_blank" class="text-[#8892b0] text-sm hover:text-[#4ecdc4] transition mt-3 inline-flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+    </div>
+
+    <!-- Project 5: AI Data Platform -->
+    <div class="card project-card p-6 mb-8">
+      <h3 class="font-semibold text-lg mb-1">AI Data Platform</h3>
+      <p class="text-[#8892b0] text-xs mb-3">Research · 🚧 Coming Soon</p>
+      <p class="text-[#c0cad8] text-sm leading-relaxed mb-3">
+        Exploring LLM-powered data agents that reason about data, orchestrate pipelines, and
+        automate data science workflows. Research covers autonomous data agents (L1-L3),
+        multi-agent orchestration patterns, and unified marketing measurement frameworks.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-tag">Data Agents</span>
+        <span class="skill-tag">LLM Orchestration</span>
+        <span class="skill-tag">Pipeline Automation</span>
+        <span class="skill-tag">RAG</span>
+        <span class="skill-tag">UMM</span>
+      </div>
+      <a href="https://github.com/dpfai/ai-data-platform" target="_blank" class="text-[#8892b0] text-sm hover:text-[#4ecdc4] transition mt-3 inline-flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center py-12">
+      <p class="text-[#c0cad8] text-lg mb-6">Want to know more about my background?</p>
+      <button class="cta-chat" onclick="toggleChat()">
+        💬 Chat with my AI assistant
+      </button>
+      <p class="text-[#8892b0] text-xs mt-4">Ask about experience, education, projects, or anything else.</p>
+    </div>
+
+    <!-- Back -->
+    <div class="text-center pb-8">
+      <a href="index.html" class="text-[#4ecdc4] hover:underline text-sm">← Back to Trading Arena</a>
+    </div>
+
+  </div>
+
+  <footer class="border-t border-[#233] py-8 text-center text-sm text-[#8892b0]">
+    <p>PD · Data Scientist & AI Engineer · Sunnyvale, CA</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-hint" id="chatHint" onclick="toggleChat()">
+      💬 Ask AI about PD <span class="arrow" style="font-size:18px;">&mdash;&gt;</span>
+    </div>
+    <button class="chat-fab-btn" onclick="toggleChat()">
+      <span class="chat-pulse"></span>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <span>💬 Ask me about PD</span>
+      <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi! I'm PD's AI assistant. Ask me about his projects, skills, experience, or the Trading Arena!</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" id="chatSend" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+  <style>
+    .chat-bubble { position: fixed; bottom: 28px; right: 28px; z-index: 100; display: flex; align-items: center; gap: 10px; }
+    .chat-fab-btn { width: 72px; height: 72px; border-radius: 50%; background: var(--quant-ai); color: var(--bg); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 24px rgba(78,205,196,.35); transition: transform .2s; border: none; position: relative; }
+    .chat-fab-btn:hover { transform: scale(1.08); }
+    .chat-pulse { position: absolute; inset: -4px; border-radius: 50%; background: var(--quant-ai); opacity: .35; animation: pulse 2.5s infinite; z-index: -1; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .3; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+    .chat-hint { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; font-size: 15px; font-weight: 500; color: var(--text); white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.3); cursor: pointer; }
+    .chat-hint .arrow { color: var(--quant-ai); }
+    @media (max-width: 768px) { .chat-hint { display: none; } }
+    .chat-panel { position: fixed; bottom: 104px; right: 28px; width: 360px; max-height: 500px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: none; flex-direction: column; z-index: 100; overflow: hidden; }
+    .chat-panel.open { display: flex; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 340px; }
+    .chat-msg { padding: 8px 12px; border-radius: 8px; font-size: 14px; max-width: 85%; word-wrap: break-word; }
+    .chat-msg.user { background: var(--quant-ai); color: var(--bg); align-self: flex-end; }
+    .chat-msg.bot { background: rgba(255,255,255,.06); color: var(--text); align-self: flex-start; }
+    .chat-input-area { padding: 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .chat-input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; color: var(--text); font-size: 14px; outline: none; }
+    .chat-input:focus { border-color: var(--quant-ai); }
+    .chat-send { padding: 8px 16px; background: var(--quant-ai); color: var(--bg); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+    .chat-send:hover { background: #6ee7d7; }
+    @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); right: 16px; } }
+  </style>
+  <script>const CHATBOT_API_URL = "https://pd-lab-chatbot.dpfstat.workers.dev";</script>
+  <script src="chat.js"></script>
+</body>
+</html>

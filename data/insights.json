@@ -1,0 +1,69 @@
+{
+  "bottom_performer": {
+    "name": "DCA Aggressive",
+    "reason": "-1.36% net return ($11,836 vs $12,000 invested). Top contributors: VOO (+$10, +0.2%). Main drags: VGT ($-86, -1.7%), SMH ($-87, -4.8%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Losses ($-173) exceed gains ($10). Risk: 36.2% vol, 3.3% max drawdown, Sharpe 7.92.",
+    "return_pct": "-1.36%"
+  },
+  "date": "2026-07-10",
+  "latest_signals": [
+    "Quant AI buy QQQ",
+    "Quant AI buy SMH",
+    "Quant AI buy SPY"
+  ],
+  "metrics": {
+    "AI Analyst": {
+      "current_value": "$12,156",
+      "max_drawdown": "1.9%",
+      "sharpe": "8.80",
+      "total_invested": "$12,000",
+      "total_return": "+1.30%",
+      "volatility": "38.5%"
+    },
+    "DCA Aggressive": {
+      "current_value": "$11,836",
+      "max_drawdown": "3.3%",
+      "sharpe": "7.92",
+      "total_invested": "$12,000",
+      "total_return": "-1.36%",
+      "volatility": "36.2%"
+    },
+    "DCA Balanced": {
+      "current_value": "$11,872",
+      "max_drawdown": "2.8%",
+      "sharpe": "8.29",
+      "total_invested": "$12,000",
+      "total_return": "-1.06%",
+      "volatility": "35.4%"
+    },
+    "DCA Conservative": {
+      "current_value": "$11,914",
+      "max_drawdown": "2.1%",
+      "sharpe": "8.67",
+      "total_invested": "$12,000",
+      "total_return": "-0.72%",
+      "volatility": "34.9%"
+    },
+    "Quant AI": {
+      "current_value": "$11,970",
+      "max_drawdown": "1.7%",
+      "sharpe": "8.95",
+      "total_invested": "$12,000",
+      "total_return": "-0.25%",
+      "volatility": "34.9%"
+    },
+    "SPY Benchmark": {
+      "current_value": "$12,030",
+      "max_drawdown": "1.2%",
+      "sharpe": "9.28",
+      "total_invested": "$12,000",
+      "total_return": "+0.25%",
+      "volatility": "34.9%"
+    }
+  },
+  "ranking": "AI Analyst (+1.30%) > SPY Benchmark (+0.25%) > Quant AI (-0.25%) > DCA Conservative (-0.72%) > DCA Balanced (-1.06%) > DCA Aggressive (-1.36%)",
+  "top_performer": {
+    "name": "AI Analyst",
+    "reason": "+1.30% net return ($12,156 vs $12,000 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$203, +9.0%), AMD (+$104, +7.4%), UNH (+$65, +4.0%). Main drags: GOOGL ($-2, -2.7%), HD ($-3, -0.6%), GS ($-9, -2.0%). Gains ($443) outweigh losses ($-287). Risk: 38.5% vol, 1.9% max drawdown, Sharpe 8.80.",
+    "return_pct": "+1.30%"
+  }
+}

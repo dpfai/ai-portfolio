@@ -1,0 +1,51 @@
+{
+  "name": "PD",
+  "title": "Senior Data Scientist & AI Engineer",
+  "location": "Sunnyvale, CA",
+  "summary": "Senior Data Scientist specializing in statistical modeling, machine learning, and decision science. Experienced in building scalable analytical platforms that simplify complex modeling and enable data-driven decision making through causal inference, experimentation, and applied AI.",
+  "experience": [
+    {
+      "company": "Confidential",
+      "role": "Senior Data Scientist",
+      "period": "Current",
+      "location": "United States",
+      "highlights": [
+        "Applies statistical modeling, causal inference, experimentation, and AI to business problems",
+        "Builds scalable analytical workflows and communicates findings to cross-functional stakeholders"
+      ]
+    },
+    {
+      "company": "AAT Bioquest",
+      "role": "Staff Scientist",
+      "period": "Jun 2016 - Sep 2020",
+      "location": "Sunnyvale, CA",
+      "highlights": [
+        "Developed Python-based automation tools to streamline laboratory workflows"
+      ]
+    }
+  ],
+  "education": [
+    { "school": "Pennsylvania State University", "degree": "M.S., Applied Statistics" },
+    { "school": "Iowa State University", "degree": "Ph.D., Organic Chemistry" }
+  ],
+  "skills": {
+    "core": ["Statistical Modeling", "Machine Learning", "Causal Inference", "Experimentation"],
+    "marketing_science": ["Marketing Mix Modeling (MMM)", "Multi-Touch Attribution (MTA)", "Incrementality Measurement", "Geo Experimentation"],
+    "applied_ai": ["AI Platform Development", "AI Agents", "LLM Applications", "RAG", "AI Workflow Automation"],
+    "programming": ["Python", "SQL", "R"],
+    "visualization": ["Tableau", "Looker", "Power BI"]
+  },
+  "resume_versions": ["Ads Measurement", "Applied AI", "Decision Science", "Product Data Science"],
+  "projects": [
+    {
+      "name": "AI Trading Arena",
+      "description": "Multi-strategy trading dashboard: $10K virtual capital, 4+ strategies (LLM AI Analyst, ML Quant, DCA portfolios, S&P 500), automated daily data pipeline, fully transparent",
+      "tech": ["Python", "LLM Integration", "Data Pipeline", "Chart.js", "yfinance", "Automated Cron"]
+    },
+    {
+      "name": "AI Agent Platform",
+      "description": "Multi-agent orchestration system with specialized AI workers (coder, writer, researcher, data miner), coordinated by central orchestrator. Features task delegation, memory management, context-aware decision making across Discord/Telegram/web.",
+      "tech": ["LLM Orchestration", "Node.js", "Discord Bot", "Task Routing", "Memory Systems"]
+    }
+  ]
+}

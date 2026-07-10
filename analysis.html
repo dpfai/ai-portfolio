@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis — AI Trading Arena</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0f0f1a; --card: #16213e; --text: #e0e0e0; --muted: #8892b0; --border: #233; --quant-ai: #4ecdc4; --loss: #ffa502; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+    .nav-link { color: #c0cad8 !important; transition: color .2s; }
+    .nav-link:hover { color: #ffffff !important; }
+    .nav-link.active { color: #4ecdc4 !important; }
+    .metric { display:flex; justify-content:space-between; gap:16px; font-size:13px; padding:5px 0; border-bottom:1px solid rgba(35,51,51,.65); }
+    .metric span { color: var(--muted); }
+    .badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .badge-buy { background: rgba(78,205,196,.15); color: var(--quant-ai); }
+    .badge-sell { background: rgba(255,165,2,.15); color: var(--loss); }
+    .badge-hold { background: rgba(136,146,176,.15); color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); padding:8px; border-bottom:1px solid var(--border); }
+    td { padding:10px 8px; border-bottom:1px solid var(--border); font-size:13px; vertical-align:top; }
+    .reason-cell { color: var(--muted); max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .data-health { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .data-health-item { background: rgba(15, 15, 26, .72); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+    .data-health-item span { display:block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .4px; }
+    .data-health-item strong { display:block; margin-top: 3px; font-size: 13px; color: var(--text); }
+    @media (max-width: 768px) { .data-health { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body class="min-h-screen">
+    <nav class="border-b border-[#233] sticky top-0 z-50 backdrop-blur-md bg-[#0f0f1a]/90">
+      <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href="index.html" class="font-bold text-lg flex items-center gap-2 group relative">
+          <span class="text-[#4ecdc4]">◆</span> PD's Lab
+          <span class="absolute top-full left-0 mt-1 px-3 py-1.5 rounded-md bg-[#16213e] border border-[#233] text-xs text-[#8892b0] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">Building AI systems with statistical thinking</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="relative group/project">
+            <button class="nav-link active flex items-center gap-1 cursor-pointer">About the Project
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" class="opacity-60"><path d="M3 4.5L6 7.5L9 4.5"/></svg>
+            </button>
+            <div class="absolute top-full right-0 mt-0 pt-2 opacity-0 invisible group-hover/project:opacity-100 group-hover/project:visible transition-all duration-200 z-50">
+              <div class="bg-[#16213e] border border-[#233] rounded-lg py-1 min-w-[140px] shadow-xl">
+                <a href="trading.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Trading</a>
+                <a href="analysis.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Analysis</a>
+                <a href="method.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Method</a>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="nav-link">About Me</a>
+          <a href="https://github.com/dpfai" target="_blank" class="nav-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <div class="mb-8">
+      <h1 class="text-2xl font-bold mb-2">Analysis</h1>
+      <p class="text-[var(--muted)] text-sm">Latest strategy performance, current exposure, and recent trading activity from the tracked data.</p>
+    </div>
+
+    <section class="mb-8">
+      <div id="dataHealth" class="data-health mb-8"></div>
+
+      <h2 class="text-lg font-semibold mb-4">Strategy Performance</h2>
+      <div id="performanceGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <section class="card p-6 mb-8">
+      <h2 class="text-lg font-semibold mb-4">Current Largest Holdings</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead><tr><th>Date</th><th>Strategy</th><th>Ticker</th><th>Value</th><th>Return</th></tr></thead>
+          <tbody id="holdingsSummary"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card p-6">
+      <h2 class="text-lg font-semibold mb-4">Trading Activity Summary</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead><tr><th>Strategy</th><th>Total Signals</th><th>Buys</th><th>Sells</th><th>Latest Signal</th><th>Latest Ticker</th></tr></thead>
+          <tbody id="activitySummary"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[#233] py-8 text-center text-sm text-[var(--muted)]">
+    <p>AI Trading Arena · For educational purposes only. Not financial advice.</p>
+  </footer>
+  <script src="common.js?v=20260628-15"></script>
+  <script src="analysis.js?v=20260628-15"></script>
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-hint" id="chatHint" onclick="toggleChat()">
+      💬 Ask AI about PD <span class="arrow" style="font-size:18px;">&mdash;&gt;</span>
+    </div>
+    <button class="chat-fab-btn" onclick="toggleChat()">
+      <span class="chat-pulse"></span>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <span>💬 Ask me about PD</span>
+      <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi! I'm PD's AI assistant. Ask me about his projects, skills, experience, or the Trading Arena!</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" id="chatSend" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+  <script>const CHATBOT_API_URL = "https://pd-lab-chatbot.dpfstat.workers.dev";</script>
+  <script src="chat.js"></script>
+</body>
+</html>

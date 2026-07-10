@@ -1,0 +1,8 @@
+name = "pd-lab-chatbot"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pd-lab-chatbot-db"
+database_id = "76a0f465-bef4-4956-843b-e8ae8ac4a0bf"

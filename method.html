@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method - PD's Trading Arena</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0f0f1a; --card: #16213e; --text: #e0e0e0; --muted: #8892b0; --border: #233; --quant-ai: #4ecdc4; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+    .nav-link { color: #c0cad8 !important; transition: color .2s; }
+    .nav-link:hover { color: #ffffff !important; }
+    .nav-link.active { color: var(--quant-ai) !important; }
+    .strategy-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+    .code-block { background: #0a0a14; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; color: #a3e635; overflow-x: auto; }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 768px) { .detail-grid { grid-template-columns: 1fr; } }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-blue { background: rgba(78,205,196,.12); color: var(--quant-ai); }
+    .tag-purple { background: rgba(167,139,250,.12); color: #a78bfa; }
+    .tag-orange { background: rgba(255,165,2,.12); color: var(--loss, #ffa502); }
+    .feature-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(35,51,51,.4); font-size: 13px; }
+    .feature-row:last-child { border-bottom: none; }
+
+    .chat-bubble { position: fixed; bottom: 28px; right: 28px; z-index: 100; display: flex; align-items: center; gap: 10px; }
+    .chat-fab-btn { width: 72px; height: 72px; border-radius: 50%; background: var(--quant-ai); color: var(--bg); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 24px rgba(78,205,196,.35); transition: transform .2s; border: none; }
+    .chat-fab-btn:hover { transform: scale(1.08); }
+    .chat-pulse { position: absolute; inset: -4px; border-radius: 50%; background: var(--quant-ai); opacity: .35; animation: pulse 2.5s infinite; z-index: -1; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .3; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+    .chat-hint { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; font-size: 15px; font-weight: 500; color: var(--text); white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.3); cursor: pointer; }
+    .chat-hint .arrow { color: var(--quant-ai); }
+    @media (max-width: 768px) { .chat-hint { display: none; } }
+    .chat-panel { position: fixed; bottom: 104px; right: 28px; width: 380px; max-height: 520px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; display: none; flex-direction: column; z-index: 100; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.4); }
+    .chat-panel.open { display: flex; }
+    .chat-header { padding: 16px; border-bottom: 1px solid var(--border); font-weight: 600; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, rgba(78,205,196,.08), transparent); }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 360px; }
+    .chat-msg { padding: 10px 14px; border-radius: 10px; font-size: 14px; max-width: 85%; word-wrap: break-word; line-height: 1.4; }
+    .chat-msg.user { background: var(--quant-ai); color: var(--bg); align-self: flex-end; }
+    .chat-msg.bot { background: rgba(255,255,255,.06); color: var(--text); align-self: flex-start; }
+    .chat-input-area { padding: 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .chat-input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; color: var(--text); font-size: 14px; outline: none; }
+    .chat-input:focus { border-color: var(--quant-ai); }
+    .chat-send { padding: 10px 18px; background: var(--quant-ai); color: var(--bg); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+    .chat-send:hover { background: #6ee7d7; }
+    @media (max-width: 768px) { .chat-panel { width: calc(100vw - 32px); right: 16px; } }
+  </style>
+</head>
+<body class="min-h-screen">
+    <nav class="border-b border-[#233] sticky top-0 z-50 backdrop-blur-md bg-[#0f0f1a]/90">
+      <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href="index.html" class="font-bold text-lg flex items-center gap-2 group relative">
+          <span class="text-[#4ecdc4]">◆</span> PD's Lab
+          <span class="absolute top-full left-0 mt-1 px-3 py-1.5 rounded-md bg-[#16213e] border border-[#233] text-xs text-[#8892b0] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">Building AI systems with statistical thinking</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="relative group/project">
+            <button class="nav-link active flex items-center gap-1 cursor-pointer">About the Project
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" class="opacity-60"><path d="M3 4.5L6 7.5L9 4.5"/></svg>
+            </button>
+            <div class="absolute top-full right-0 mt-0 pt-2 opacity-0 invisible group-hover/project:opacity-100 group-hover/project:visible transition-all duration-200 z-50">
+              <div class="bg-[#16213e] border border-[#233] rounded-lg py-1 min-w-[140px] shadow-xl">
+                <a href="trading.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Trading</a>
+                <a href="analysis.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Analysis</a>
+                <a href="method.html" class="block px-4 py-2 text-sm text-[#c0cad8] hover:bg-[#4ecdc4]/10 hover:text-[#4ecdc4] transition">Method</a>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="nav-link">About Me</a>
+          <a href="https://github.com/dpfai" target="_blank" class="nav-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Methodology</h1>
+    <p class="text-[var(--muted)] mb-10">How each strategy works. Signals are generated from source systems, then rebuilt into a consistent daily arena dataset.</p>
+
+    <!-- AI Analyst -->
+    <div class="card p-6 mb-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="strategy-dot" style="background:#ff6b6b"></span>
+        <h2 class="text-xl font-semibold">AI Analyst</h2>
+      </div>
+      <p class="text-[var(--muted)] text-sm leading-relaxed mb-3">
+        An LLM-based market analysis system that uses OpenClaw Haiyan weekly stock analysis as decision input. Buy/sell recommendations execute on the next trading day, then holdings are marked to market on each later trading day.
+      </p>
+      <div class="text-xs space-y-1 text-[var(--muted)]">
+        <p><span class="text-[var(--text)]">Data inputs:</span> Technical (MA, RSI, MACD), Fundamental (analyst ratings, target prices), Market sentiment</p>
+        <p><span class="text-[var(--text)]">Decision:</span> Weekly recommendations become arena trades on the next trading day</p>
+        <p><span class="text-[var(--text)]">Position sizing:</span> Current arena rule invests up to 30% of available cash per buy signal</p>
+      </div>
+    </div>
+
+    <!-- Quant AI (detailed) -->
+    <div class="card p-6 mb-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="strategy-dot" style="background:#4ecdc4"></span>
+        <h2 class="text-xl font-semibold">Quant AI — Four-Vote Composite System</h2>
+      </div>
+      <p class="text-[var(--muted)] text-sm leading-relaxed mb-4">
+        A systematic trading strategy I designed from scratch that combines three rule-based technical signals
+        with a machine learning model. A weighted voting mechanism aggregates four independent sub-signals into
+        a final trading decision. The system runs daily via automated cron, downloading fresh market data,
+        generating signals, executing simulated trades, and persisting results to SQLite.
+      </p>
+
+      <!-- Architecture -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">System Architecture</h3>
+      <div class="code-block mb-4">
+┌─────────────┐    ┌──────────────┐    ┌────────────────┐    ┌─────────────┐<br>
+│  yfinance    │───▶│  Feature     │───▶│  4 Sub-Signals │───▶│  Vote &     │<br>
+│  OHLCV Data  │    │  Engineering │    │  (MA/RSI/BB/ML)│    │  Decide     │<br>
+└─────────────┘    └──────────────┘    └────────────────┘    └──────┬──────┘<br>                                                                     ▼<br>
+                   ┌──────────────┐    ┌────────────────┐    ┌─────────────┐<br>
+                   │  SQLite DB   │◀───│  Portfolio     │◀───│  Position   │<br>
+                   │  (signals,   │    │  Simulator     │    │  Sizing     │<br>
+                   │   equity,    │    └────────────────┘    └─────────────┘<br>
+                   │   holdings)  │<br>
+                   └──────────────┘
+      </div>
+
+      <!-- Sub-signals -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Four Sub-Signals</h3>
+      <div class="detail-grid mb-4">
+        <div class="bg-[#0a0a14] rounded-lg p-4">
+          <p class="text-xs font-semibold mb-2 text-[var(--quant-ai)]">1. MA Crossover</p>
+          <ul class="text-xs space-y-1 text-[var(--muted)]">
+            <li><span class="text-[var(--text)]">Logic:</span> MA20 crosses above/below MA50</li>
+            <li><span class="text-[var(--text)]">Signal:</span> MA20 > MA50 → bullish (+1), else bearish (-1)</li>
+            <li><span class="text-[var(--text)]">Type:</span> Trend-following</li>
+          </ul>
+        </div>
+        <div class="bg-[#0a0a14] rounded-lg p-4">
+          <p class="text-xs font-semibold mb-2 text-[var(--quant-ai)]">2. RSI Mean Reversion</p>
+          <ul class="text-xs space-y-1 text-[var(--muted)]">
+            <li><span class="text-[var(--text)]">Logic:</span> RSI(14) oversold/overbought thresholds</li>
+            <li><span class="text-[var(--text)]">Signal:</span> RSI &lt; 30 → bullish, RSI &gt; 70 → bearish</li>
+            <li><span class="text-[var(--text)]">Type:</span> Mean reversion</li>
+          </ul>
+        </div>
+        <div class="bg-[#0a0a14] rounded-lg p-4">
+          <p class="text-xs font-semibold mb-2 text-[var(--quant-ai)]">3. Bollinger Band</p>
+          <ul class="text-xs space-y-1 text-[var(--muted)]">
+            <li><span class="text-[var(--text)]">Logic:</span> Price breaks 2σ bands around MA20</li>
+            <li><span class="text-[var(--text)]">Signal:</span> Price &lt; lower band → bullish, &gt; upper → bearish</li>
+            <li><span class="text-[var(--text)]">Type:</span> Volatility breakout</li>
+          </ul>
+        </div>
+        <div class="bg-[#0a0a14] rounded-lg p-4">
+          <p class="text-xs font-semibold mb-2 text-[var(--quant-ai)]">4. ML Prediction</p>
+          <ul class="text-xs space-y-1 text-[var(--muted)]">
+            <li><span class="text-[var(--text)]">Model:</span> Random Forest Classifier</li>
+            <li><span class="text-[var(--text)]">Target:</span> 5-day forward return direction (binary)</li>
+            <li><span class="text-[var(--text)]">Type:</span> Predictive classification</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Voting Rules -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Weighted Voting & Position Sizing</h3>
+      <div class="bg-[#0a0a14] rounded-lg p-4 mb-4">
+        <div class="feature-row"><span class="text-[var(--text)]">3-4 bullish votes</span><span class="tag tag-blue">Buy 50% of cash</span></div>
+        <div class="feature-row"><span class="text-[var(--text)]">2 bullish votes</span><span class="tag tag-blue">Buy 25% of cash</span></div>
+        <div class="feature-row"><span class="text-[var(--text)]">2 bearish votes</span><span class="tag tag-orange">Sell 50% of position</span></div>
+        <div class="feature-row"><span class="text-[var(--text)]">3-4 bearish votes</span><span class="tag tag-orange">Sell 100% of position</span></div>
+        <div class="feature-row"><span class="text-[var(--text)]">Mixed / neutral</span><span class="tag" style="background:rgba(136,146,176,.15);color:var(--muted)">Hold</span></div>
+      </div>
+
+      <!-- Feature Engineering -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Feature Engineering (24 Features)</h3>
+      <div class="detail-grid mb-4">
+        <div class="bg-[#0a0a14] rounded-lg p-4">
+          <p class="text-xs font-semibold mb-2 text-[#a78bfa]">Price Features (per window: 5, 10, 20, 60d)</p>
+          <ul class="text-xs space-y-1 text-[var(--muted)]">
+            <li><span class="text-[var(--text)]">return_Nd</span> — N-day cumulative return</li>
+            <li><span class="text-[var(--text)]">volatility_Nd</span> — rolling std of daily returns</li>
+            <li><span class="text-[var(--text)]">ma_dist_Nd</span> — (price - MA) / MA, distance from mean</li>
+            <li><span class="text-[var(--text)]">high_low_ratio_Nd</span> — rolling max(High) / min(Low)</li>
+            <li><span class="text-[var(--text)]">volume_change_Nd</span> — N-day volume change rate</li>
+          </ul>
+          <p class="text-xs text-[var(--muted)] mt-2">= 20 features (5 metrics × 4 windows)</p>
+        </div>
+        <div class="bg-[#0a0a14] rounded-lg p-4">
+          <p class="text-xs font-semibold mb-2 text-[#a78bfa]">Technical Indicators (4 features)</p>
+          <ul class="text-xs space-y-1 text-[var(--muted)]">
+            <li><span class="text-[var(--text)]">rsi_14</span> — Relative Strength Index (14-period)</li>
+            <li><span class="text-[var(--text)]">macd</span> — EMA(12) - EMA(26)</li>
+            <li><span class="text-[var(--text)]">macd_signal</span> — EMA(9) of MACD line</li>
+            <li><span class="text-[var(--text)]">bb_position</span> — (price - MA20) / (2 × std20), position within Bollinger Bands</li>
+            <li><span class="text-[var(--text)]">atr_ratio</span> — ATR(14) / Close, normalized volatility</li>
+          </ul>
+          <p class="text-xs text-[var(--muted)] mt-2">Note: macd_hist (MACD - signal) also computed</p>
+        </div>
+      </div>
+
+      <!-- ML Model -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">ML Model Details</h3>
+      <div class="bg-[#0a0a14] rounded-lg p-4 mb-4">
+        <div class="feature-row"><span class="text-[var(--muted)]">Algorithm</span><span class="text-[var(--text)]">Random Forest Classifier (scikit-learn)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">n_estimators</span><span class="text-[var(--text)]">100</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">max_depth</span><span class="text-[var(--text)]">10</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Target</span><span class="text-[var(--text)]">Binary: 5-day forward return > 0 (bullish=1, bearish=0)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Training data</span><span class="text-[var(--text)]">All available history (~900 days lookback with 420-day warmup)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Features per sample</span><span class="text-[var(--text)]">24 (20 price + 4 technical)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Alternative models</span><span class="text-[var(--text)]">Logistic Regression (w/ StandardScaler), Gradient Boosting</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Persistence</span><span class="text-[var(--text)]">joblib (.joblib files per ticker)</span></div>
+      </div>
+
+      <p class="text-xs text-[var(--muted)] mb-2">
+        Also implemented: Logistic Regression (with StandardScaler pipeline for normalization) and Gradient Boosting Classifier.
+        Model comparison available in the dashboard's Prediction page with accuracy, precision, recall, and F1 metrics.
+      </p>
+
+      <!-- Validation -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Validation & Anti-Leakage</h3>
+      <div class="bg-[#0a0a14] rounded-lg p-4 mb-4">
+        <div class="feature-row"><span class="text-[var(--muted)]">Validation method</span><span class="text-[var(--text)]">Walk-Forward (TimeSeriesSplit, 5 folds, expanding window)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Data leakage prevention</span><span class="text-[var(--text)]">Chronological split — train on past, test on future only</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Look-ahead bias prevention</span><span class="text-[var(--text)]">Next-bar execution: signals use data up to day T, trades execute at day T+1 open</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Target construction</span><span class="text-[var(--text)]">Forward return = Close[T+5] / Close[T] - 1 (shifted backward, no peeking)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Metrics</span><span class="text-[var(--text)]">Accuracy, Precision, Recall, F1 (per fold + mean)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Test coverage</span><span class="text-[var(--text)]">81% (44 unit tests passing)</span></div>
+      </div>
+
+      <!-- Retrain Pipeline -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Retrain & Refresh Pipeline</h3>
+      <div class="code-block mb-4">
+<span style="color:#8892b0"># Daily cron (after US market close, ~14:00 PDT)</span><br>
+<span style="color:#4ecdc4">python3</span> daily_runner.py --end $(date +%F)<br><br>
+<span style="color:#8892b0"># 1. Download fresh OHLCV from yfinance (SPY, QQQ, VOO, VGT, SMH)</span><br>
+<span style="color:#8892b0">#    - 420-day warmup for indicator calculation</span><br>
+<span style="color:#8892b0"># 2. Build features (24 per ticker per day)</span><br>
+<span style="color:#8892b0"># 3. Run 4 sub-signal generators</span><br>
+<span style="color:#8892b0"># 4. Vote → position sizing → simulated trade execution</span><br>
+<span style="color:#8892b0"># 5. Record signals, equity, holdings to SQLite</span><br><br>
+<span style="color:#8892b0"># Weekly model retrain</span><br>
+<span style="color:#4ecdc4">python3</span> retrain.py --end $(date +%F) --splits 5<br><br>
+<span style="color:#8892b0"># 1. Download ~900 days of history per ticker</span><br>
+<span style="color:#8892b0"># 2. Prepare full feature/target dataset (leakage-checked)</span><br>
+<span style="color:#8892b0"># 3. Walk-forward validate (5 expanding-window folds)</span><br>
+<span style="color:#8892b0"># 4. Fit final model on ALL available data</span><br>
+<span style="color:#8892b0"># 5. Save .joblib per ticker + training_metrics.json</span>
+      </div>
+
+      <p class="text-xs text-[var(--muted)] mb-2">
+        <span class="text-[var(--text)]">Deterministic backfill:</span> The entire pipeline is designed for full reset and rebuild.
+        <code style="color:var(--quant-ai)">clear_source_data()</code> wipes all Quant AI rows from SQLite,
+        then <code style="color:var(--quant-ai)">simulate_portfolio()</code> replays from the starting date (Jun 15, 2026)
+        using the same signal logic. This ensures reproducibility — running the same data through the pipeline
+        always produces identical results.
+      </p>
+
+      <!-- Data & Storage -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Data Sources & Storage</h3>
+      <div class="bg-[#0a0a14] rounded-lg p-4 mb-4">
+        <div class="feature-row"><span class="text-[var(--muted)]">Market data</span><span class="text-[var(--text)]">yfinance API (daily OHLCV)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Tickers</span><span class="text-[var(--text)]">SPY, QQQ, VOO, VGT, SMH</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Storage</span><span class="text-[var(--text)]">SQLite (3 tables: signals, equity_curve, holdings)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Warmup period</span><span class="text-[var(--text)]">420 days (for indicators + ML features)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Backfill start</span><span class="text-[var(--text)]">June 15, 2026</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Automation</span><span class="text-[var(--text)]">Cron job (daily after market close, weekdays only)</span></div>
+        <div class="feature-row"><span class="text-[var(--muted)]">Dashboard</span><span class="text-[var(--text)]">Streamlit + Plotly (6 pages, 40+ metrics)</span></div>
+      </div>
+
+      <!-- Risk Metrics Available -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Risk Metrics & Analytics</h3>
+      <div class="flex flex-wrap mb-4">
+        <span class="tag tag-blue">Sharpe Ratio</span>
+        <span class="tag tag-blue">Sortino Ratio</span>
+        <span class="tag tag-blue">Max Drawdown</span>
+        <span class="tag tag-blue">Beta</span>
+        <span class="tag tag-blue">Alpha</span>
+        <span class="tag tag-blue">Information Ratio</span>
+        <span class="tag tag-blue">Tracking Error</span>
+        <span class="tag tag-blue">Volatility</span>
+        <span class="tag tag-purple">ATR</span>
+        <span class="tag tag-purple">RSI</span>
+        <span class="tag tag-purple">MACD</span>
+        <span class="tag tag-purple">Bollinger Bands</span>
+        <span class="tag tag-purple">Market Regime Detection</span>
+      </div>
+
+      <!-- Tech Stack -->
+      <h3 class="font-semibold text-[var(--quant-ai)] text-sm mb-2 mt-4">Tech Stack</h3>
+      <div class="flex flex-wrap mb-4">
+        <span class="tag tag-blue">Python</span>
+        <span class="tag tag-blue">scikit-learn</span>
+        <span class="tag tag-blue">pandas</span>
+        <span class="tag tag-blue">NumPy</span>
+        <span class="tag tag-blue">SQLite</span>
+        <span class="tag tag-blue">yfinance</span>
+        <span class="tag tag-blue">Streamlit</span>
+        <span class="tag tag-blue">Plotly</span>
+        <span class="tag tag-blue">joblib</span>
+        <span class="tag tag-blue">pytest</span>
+      </div>
+
+      <p class="text-xs text-[var(--muted)] mt-4">
+        <span class="text-[var(--text)]">Reference repos studied:</span>
+        TradingAgents (multi-agent trading), ai-hedge-fund (investor persona agents),
+        FinGPT (financial LLMs), Qlib (Microsoft quant platform), OpenBB (data integration).
+      </p>
+    </div>
+
+    <!-- DCA -->
+    <div class="card p-6 mb-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="strategy-dot" style="background:#a78bfa"></span>
+        <h2 class="text-xl font-semibold">DCA Portfolios</h2>
+      </div>
+      <p class="text-[var(--muted)] text-sm leading-relaxed mb-4">
+        Dollar-Cost Averaging portfolios with weekly fixed-amount investments across VOO, VGT, and SMH in varying allocation ratios. No active trading decisions.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="bg-[#0f0f1a] rounded-lg p-4">
+          <p class="text-xs font-semibold text-[#a78bfa]">Aggressive</p>
+          <p class="text-xs text-[var(--muted)] mt-1">VOO 42.5% / VGT 42.5% / SMH 15%</p>
+        </div>
+        <div class="bg-[#0f0f1a] rounded-lg p-4">
+          <p class="text-xs font-semibold text-[#a78bfa]">Balanced</p>
+          <p class="text-xs text-[var(--muted)] mt-1">VOO 50% / VGT 40% / SMH 10%</p>
+        </div>
+        <div class="bg-[#0f0f1a] rounded-lg p-4">
+          <p class="text-xs font-semibold text-[#a78bfa]">Conservative</p>
+          <p class="text-xs text-[var(--muted)] mt-1">VOO 60% / VGT 35% / SMH 5%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- S&P 500 -->
+    <div class="card p-6 mb-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="strategy-dot" style="background:#fbbf24"></span>
+        <h2 class="text-xl font-semibold">S&P 500 Benchmark</h2>
+      </div>
+      <p class="text-[var(--muted)] text-sm leading-relaxed">
+        Buy-and-hold SPY with identical capital injections ($10,000 initial + $500 weekly) for baseline comparison. The benchmark every active strategy must beat.
+      </p>
+    </div>
+
+    <!-- Arena Rules -->
+    <div class="card p-6">
+      <h2 class="text-xl font-semibold mb-4">Arena Rules</h2>
+      <div class="space-y-3 text-sm text-[var(--muted)]">
+        <p><span class="text-[var(--text)] font-medium">Starting capital:</span> $10,000 (June 15, 2026)</p>
+        <p><span class="text-[var(--text)] font-medium">Weekly deposit:</span> $500 every Tuesday</p>
+        <p><span class="text-[var(--text)] font-medium">No shorting:</span> Long-only positions</p>
+        <p><span class="text-[var(--text)] font-medium">No leverage:</span> Cannot spend more than available cash</p>
+        <p><span class="text-[var(--text)] font-medium">Transparency:</span> Outputs are rebuilt from source data with validation before publish</p>
+        <p><span class="text-[var(--text)] font-medium">For educational purposes only. Not financial advice.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="border-t border-[#233] py-8 text-center text-sm text-[var(--muted)]">
+    <p>PD · Data Scientist & AI Engineer · Sunnyvale, CA</p>
+    <p class="mt-1">Trading Arena for educational purposes only. Not financial advice.</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-hint" id="chatHint" onclick="toggleChat()">
+      💬 Ask AI about PD <span class="arrow">→</span>
+    </div>
+    <button class="chat-fab-btn" onclick="toggleChat()">
+      <span class="chat-pulse"></span>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <span>💬 Ask me about PD</span>
+      <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi! I'm PD's AI assistant. Ask me about his projects, skills, experience, or the Trading Arena!</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" id="chatSend" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+  <script>const CHATBOT_API_URL = "https://pd-lab-chatbot.dpfstat.workers.dev";</script>
+  <script src="chat.js"></script>
+</body>
+</html>

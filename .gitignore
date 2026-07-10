@@ -1,0 +1,24 @@
+# Environment variables (NEVER commit)
+.env
+.dev.vars
+
+# Database
+*.db
+*.db-journal
+chatbot.db
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cloudflare
+.wrangler/

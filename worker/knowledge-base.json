@@ -1,0 +1,111 @@
+{
+  "identity": {
+    "role": "Senior Data Scientist & AI Engineer",
+    "education": "Ph.D. in Organic Chemistry",
+    "location": "Sunnyvale, CA",
+    "note": "Do NOT reveal the person's real name, email, phone number."
+  },
+  "work_history": {
+    "summary": "Senior Data Scientist with 4-5 years of data science experience",
+    "focus": [
+      "Marketing science",
+      "Causal inference",
+      "Experimentation",
+      "Statistical modeling",
+      "Applied AI and analytics automation"
+    ],
+    "interests": [
+      "Building practical AI systems grounded in statistical thinking",
+      "Making advanced analytical methods easier to use",
+      "AI agents and data science workflow automation"
+    ],
+    "note": "The aggregate 4-5 years of data science experience may be shared. Do NOT reveal the current employer, clients, employer-specific tenure, internal projects, team details, or internal tools."
+  },
+  "skills": {
+    "core_expertise": [
+      "Statistical Modeling",
+      "Machine Learning",
+      "Causal Inference",
+      "Experimentation",
+      "A/B Testing"
+    ],
+    "marketing_science": [
+      "Marketing Mix Modeling (MMM)",
+      "Multi-Touch Attribution (MTA)",
+      "Incrementality Measurement",
+      "Geo Experimentation"
+    ],
+    "applied_ai": [
+      "AI Platform Development",
+      "AI Agents",
+      "LLM Applications",
+      "RAG (Retrieval-Augmented Generation)",
+      "AI Workflow Automation",
+      "Multi-Agent Orchestration"
+    ],
+    "programming": [
+      "Python",
+      "SQL",
+      "R",
+      "Tableau"
+    ]
+  },
+  "projects": {
+    "ai_trading_arena": {
+      "description": "A virtual trading competition where $10,000 starting capital and $500 weekly deposits are managed by four independent strategies: an LLM-based AI Analyst, a four-vote composite quant system (MA/RSI/Bollinger/Random Forest), a DCA baseline, and an ETF benchmark. Fully automated daily data pipeline.",
+      "tech": ["Random Forest", "Feature Engineering", "SQLite", "OpenClaw", "Automation"],
+      "repo": "https://github.com/dpfai/ai-portfolio",
+      "note": "For specific algorithm details, direct visitors to the repo and method.html page."
+    },
+    "conductor": {
+      "description": "A CLI tool that orchestrates multiple AI coding agents (Claude Code, Codex) to collaborate on software engineering tasks.",
+      "tech": ["LLM Orchestration", "Multi-Agent", "CLI Tool", "Workflow Automation"],
+      "repo": "https://github.com/dpfai/conductor"
+    },
+    "data_science_interview_knowledge_base": {
+      "description": "A structured senior data science interview preparation system with 180 curated DS/ML coding problems, SQL and pandas practice, and statistics modules spanning probability, inference, regression, experimentation, and causal reasoning.",
+      "tech": ["Python", "SQL", "Statistics", "Experimentation", "Vanilla JavaScript"],
+      "repo": "https://github.com/dpfai/data-science-interviews"
+    },
+    "quant_learning": {
+      "description": "An AI-assisted quantitative research and learning dashboard with market regime analysis, technical and risk metrics, watchlists, backtesting, machine learning experiments, and an in-product Learning Center.",
+      "tech": ["Streamlit", "Python", "Quant Research", "Backtesting", "Machine Learning", "Risk Analytics"],
+      "repo": "https://github.com/dpfai/quant-learning"
+    },
+    "ai_ads_measurement": {
+      "description": "Research on how AI/LLM technologies can transform advertising measurement, attribution, and marketing mix modeling.",
+      "tech": ["MMM", "MTA", "Causal Inference", "LLM Applications"],
+      "repo": "https://github.com/dpfai/ai-ads-measurement",
+      "status": "Coming Soon"
+    },
+    "ai_data_platform": {
+      "description": "Exploring LLM-powered data agents that reason about data, orchestrate pipelines, and automate data science workflows.",
+      "tech": ["Data Agents", "LLM Orchestration", "Pipeline Automation", "RAG"],
+      "repo": "https://github.com/dpfai/ai-data-platform",
+      "status": "Coming Soon"
+    }
+  },
+  "tagline": "Building AI systems with statistical thinking",
+  "github": "https://github.com/dpfai",
+  "guardrails": {
+    "never_reveal": [
+      "Real name",
+      "Email address",
+      "Phone number",
+      "API keys or technical implementation secrets",
+      "Internal system architecture details",
+      "Current employer, clients, employer-specific tenure, internal work projects, teams, or internal tools",
+      "Specific algorithm implementations (point to repo instead)"
+    ],
+    "can_share": [
+      "General professional experience without identifying the current employer or its projects",
+      "Aggregate data science experience of 4-5 years",
+      "Professional focus areas and interests",
+      "General role description and responsibilities",
+      "Skills, education, project descriptions, GitHub links"
+    ],
+    "when_asked_about_personal_info": "Offer to leave a message with their email and job description so PD can follow up with a resume.",
+    "when_asked_about_specific_algorithms": "Direct them to the relevant GitHub repository for technical details.",
+    "when_asked_about_work_details": "Share aggregate experience, general skills, focus areas, and interests. Do not identify the current employer, clients, employer-specific tenure, projects, team structure, or proprietary tools."
+  }
+}
