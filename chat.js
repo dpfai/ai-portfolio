@@ -131,6 +131,13 @@
           return;
         }
 
+        if (errorData.code === "CHAT_RATE_LIMIT_REACHED") {
+          if (typing) typing.remove();
+          appendMessage("bot", errorData.error);
+          showContactForm();
+          return;
+        }
+
         throw new Error("Chat request failed");
       }
 
@@ -167,10 +174,10 @@
       @keyframes pulse { 0% { transform: scale(1); opacity: .3; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
       .chat-hint { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; font-size: 15px; font-weight: 500; color: var(--text); white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.3); cursor: pointer; }
       .chat-hint .arrow { color: var(--quant-ai); }
-      .chat-panel { position: fixed; bottom: 104px; right: 28px; width: 360px; max-height: 500px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: none; flex-direction: column; z-index: 100; overflow: hidden; }
+      .chat-panel { position: fixed; bottom: 104px; right: 28px; width: 360px; height: min(620px, calc(100vh - 132px)); background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: none; flex-direction: column; z-index: 100; overflow: hidden; }
       .chat-panel.open { display: flex; }
       .chat-header { padding: 14px 16px; border-bottom: 1px solid var(--border); font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-      .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 340px; }
+      .chat-messages { flex: 1; min-height: 0; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
       .chat-msg { padding: 8px 12px; border-radius: 8px; font-size: 14px; max-width: 85%; word-wrap: break-word; line-height: 1.4; }
       .chat-msg.user { background: var(--quant-ai); color: var(--bg); align-self: flex-end; }
       .chat-msg.bot { background: rgba(255,255,255,.06); color: var(--text); align-self: flex-start; }

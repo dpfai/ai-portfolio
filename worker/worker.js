@@ -41,7 +41,10 @@ async function handleChat(request, env) {
   const ip = getClientIp(request);
   const rateLimit = Number(env.RATE_LIMIT || 10);
   if (!allowRequest(ip, rateLimit)) {
-    return jsonResponse({ error: "Rate limit exceeded" }, 429);
+    return jsonResponse({
+      error: "You've reached the chat limit for now. Please wait a minute and try again, or leave your email and job description using the contact form below.",
+      code: "CHAT_RATE_LIMIT_REACHED"
+    }, 429);
   }
 
   const body = await readJson(request);
