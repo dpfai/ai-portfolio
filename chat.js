@@ -1,5 +1,5 @@
 (function () {
-  const CONTACT_PROMPT = "If you'd like to get in touch, please leave your email and job description using the contact form below, and PD will be notified.";
+  const CONTACT_PROMPT = "If you'd like to get in touch, please leave your email and a message using the contact form below, and PD will be notified.";
 
   function getSessionId() {
     let sessionId = sessionStorage.getItem("pd_chat_session_id");
@@ -57,7 +57,7 @@
     form.className = "chat-contact-form";
     form.innerHTML = `
       <input class="chat-contact-input" id="chatContactEmail" type="email" placeholder="Email" required>
-      <textarea class="chat-contact-input" id="chatContactJob" rows="3" placeholder="Job description or note"></textarea>
+      <textarea class="chat-contact-input" id="chatContactJob" rows="3" placeholder="What would you like PD to know? (e.g., a role, project, or opportunity)"></textarea>
       <button class="chat-contact-submit" type="submit">Submit</button>
       <div class="chat-contact-status" id="chatContactStatus"></div>
     `;
@@ -127,7 +127,8 @@
         const errorData = await response.json().catch(() => ({}));
         if (errorData.code === "LLM_API_LIMIT_REACHED") {
           if (typing) typing.remove();
-          appendMessage("bot", "LLM API limit reached. Please wait and try again.");
+          appendMessage("bot", "LLM API limit reached. Please wait and try again, or leave PD a message below.");
+          showContactForm();
           return;
         }
 
@@ -151,7 +152,8 @@
       }
     } catch (error) {
       if (typing) typing.remove();
-      appendMessage("bot", "Sorry, I'm having trouble right now.");
+      appendMessage("bot", "Sorry, I'm having trouble right now. You can still leave PD a message below.");
+      showContactForm();
     } finally {
       setSending(false);
       if (input) input.focus();
@@ -162,11 +164,22 @@
     if (document.getElementById("chatSharedStyles")) return;
 
     const panel = document.querySelector(".chat-panel");
-    if (panel && getComputedStyle(panel).position === "fixed") return;
+    const hasPanelStyles = panel && getComputedStyle(panel).position === "fixed";
 
     const style = document.createElement("style");
     style.id = "chatSharedStyles";
-    style.textContent = `
+    const contactStyles = `
+      .chat-contact-form { align-self: stretch; display: flex; flex-direction: column; gap: 8px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,.04); }
+      .chat-contact-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; color: #f3f6fb; caret-color: #f3f6fb; font-size: 14px; outline: none; resize: vertical; }
+      .chat-contact-input::placeholder { color: #7f8aa3; opacity: 1; }
+      .chat-contact-input:focus { border-color: var(--quant-ai); }
+      .chat-contact-submit { padding: 8px 16px; background: var(--quant-ai); color: var(--bg); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+      .chat-contact-submit:hover { background: #6ee7d7; }
+      .chat-contact-submit:disabled { opacity: .5; cursor: not-allowed; }
+      .chat-contact-status { min-height: 16px; color: var(--muted); font-size: 12px; }
+    `;
+
+    style.textContent = hasPanelStyles ? contactStyles : `
       .chat-bubble { position: fixed; bottom: 28px; right: 28px; z-index: 100; display: flex; align-items: center; gap: 10px; }
       .chat-fab-btn { width: 72px; height: 72px; border-radius: 50%; background: var(--quant-ai); color: var(--bg); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 24px rgba(78,205,196,.35); transition: transform .2s; border: none; position: relative; }
       .chat-fab-btn:hover { transform: scale(1.08); }
@@ -185,13 +198,10 @@
       .chat-input-area { padding: 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
       .chat-input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; color: var(--text); font-size: 14px; outline: none; min-width: 0; }
       .chat-input:focus { border-color: var(--quant-ai); }
-      .chat-send, .chat-contact-submit { padding: 8px 16px; background: var(--quant-ai); color: var(--bg); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
-      .chat-send:hover, .chat-contact-submit:hover { background: #6ee7d7; }
-      .chat-send:disabled, .chat-contact-submit:disabled { opacity: .5; cursor: not-allowed; }
-      .chat-contact-form { align-self: stretch; display: flex; flex-direction: column; gap: 8px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,.04); }
-      .chat-contact-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; color: var(--text); font-size: 14px; outline: none; resize: vertical; }
-      .chat-contact-input:focus { border-color: var(--quant-ai); }
-      .chat-contact-status { min-height: 16px; color: var(--muted); font-size: 12px; }
+      .chat-send { padding: 8px 16px; background: var(--quant-ai); color: var(--bg); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+      .chat-send:hover { background: #6ee7d7; }
+      .chat-send:disabled { opacity: .5; cursor: not-allowed; }
+      ${contactStyles}
       @media (max-width: 768px) { .chat-hint { display: none; } .chat-panel { width: calc(100vw - 32px); right: 16px; } }
     `;
     document.head.appendChild(style);

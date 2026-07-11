@@ -42,7 +42,7 @@ async function handleChat(request, env) {
   const rateLimit = Number(env.RATE_LIMIT || 10);
   if (!allowRequest(ip, rateLimit)) {
     return jsonResponse({
-      error: "You've reached the chat limit for now. Please wait a minute and try again, or leave your email and job description using the contact form below.",
+      error: "You've reached the chat limit for now. Please wait a minute and try again, or leave your email and a message using the contact form below.",
       code: "CHAT_RATE_LIMIT_REACHED"
     }, 429);
   }
@@ -103,7 +103,7 @@ async function handleChat(request, env) {
   }
 
   if (isHiringInquiry(message) && !/contact form/i.test(reply)) {
-    reply += "\n\nIf you'd like to get in touch, please leave your email and job description using the contact form below, and PD will be notified.";
+    reply += "\n\nIf you'd like to get in touch, please leave your email and anything you'd like PD to know using the contact form below, and PD will be notified.";
   }
 
   await insertMessage(env, conversation.id, "user", message);
@@ -168,7 +168,7 @@ async function handleContact(request, env) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          content: `📬 **New contact request from portfolio chatbot**\n\n**Email:** ${email}\n**Job Description:** ${jobDescription || "N/A"}\n**Session:** ${sessionId}\n**Time:** ${new Date().toISOString()}`
+          content: `📬 **New contact request from portfolio chatbot**\n\n**Email:** ${email}\n**Message:** ${jobDescription || "N/A"}\n**Session:** ${sessionId}\n**Time:** ${new Date().toISOString()}`
         })
       });
     } catch {
@@ -188,7 +188,7 @@ Rules (STRICT - never break):
 3. NEVER discuss specific algorithm implementations - direct them to the GitHub repo
 4. NEVER reveal PD's current employer, clients, employer-specific tenure, internal work projects, team details, or proprietary tools
 5. You CAN share: 4-5 years of aggregate data science experience, general skills, professional focus areas and interests, education (M.S. in Applied Statistics and Ph.D. in Organic Chemistry), public portfolio project descriptions, GitHub links, and location (Sunnyvale, CA)
-6. When someone asks about hiring, jobs, resumes, or personal contact: tell them they can leave their email and job description via the contact form, and PD will be notified to follow up
+6. When someone asks about hiring, jobs, resumes, collaboration, or personal contact: tell them they can leave their email and anything they would like PD to know via the contact form, and PD will be notified to follow up
 7. Be professional, helpful, and concise
 8. Keep responses under 200 words unless specifically asked for detail
 9. If asked something outside PD's professional scope, politely redirect
@@ -255,7 +255,7 @@ function allowRequest(ip, limit) {
 }
 
 function isHiringInquiry(message) {
-  return /\b(hire|hiring|recruit|recruiter|recruitment|job|role|opportunity|resume|cv|contact|interview)\b/i.test(message);
+  return /\b(hire|hiring|recruit|recruiter|recruitment|job|role|opportunity|resume|cv|contact|interview|connect|reach|speak|talk|message|collaborate|collaboration)\b/i.test(message);
 }
 
 function isValidEmail(email) {

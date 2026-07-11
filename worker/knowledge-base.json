@@ -104,7 +104,7 @@
       "General role description and responsibilities",
       "Skills, education, project descriptions, GitHub links"
     ],
-    "when_asked_about_personal_info": "Offer to leave a message with their email and job description so PD can follow up with a resume.",
+    "when_asked_about_personal_info": "Offer to leave their email and anything they would like PD to know so PD can follow up.",
     "when_asked_about_specific_algorithms": "Direct them to the relevant GitHub repository for technical details.",
     "when_asked_about_work_details": "Share aggregate experience, general skills, focus areas, and interests. Do not identify the current employer, clients, employer-specific tenure, projects, team structure, or proprietary tools."
   }
