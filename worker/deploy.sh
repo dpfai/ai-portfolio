@@ -22,7 +22,7 @@ fi
 
 cd "$SCRIPT_DIR"
 
-for name in LLM_API_KEY LLM_API_BASE LLM_MODEL DISCORD_WEBHOOK_URL MAX_MESSAGES RATE_LIMIT; do
+for name in LLM_API_KEY LLM_API_BASE LLM_MODEL FALLBACK_LLM_API_KEY FALLBACK_LLM_API_BASE FALLBACK_LLM_MODEL DISCORD_WEBHOOK_URL MAX_MESSAGES RATE_LIMIT; do
   value="$(eval "printf '%s' \"\${$name:-}\"")"
   if [ -n "$value" ]; then
     printf '%s' "$value" | npx wrangler secret put "$name"

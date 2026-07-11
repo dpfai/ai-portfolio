@@ -60,26 +60,32 @@ async function handleChat(request, env) {
   const history = await getConversationHistory(env, conversation.id, Number(env.MAX_MESSAGES || 30));
   const systemPrompt = buildSystemPrompt();
 
-  const llmResponse = await fetch(`${trimTrailingSlash(env.LLM_API_BASE)}/chat/completions`, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${env.LLM_API_KEY}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      model: env.LLM_MODEL || "doubao-seed-2.0-lite",
-      messages: [
-        { role: "system", content: systemPrompt },
-        ...history,
-        { role: "user", content: message }
-      ],
-      max_tokens: 1024,
-      temperature: 0.7
-    })
+  const messages = [
+    { role: "system", content: systemPrompt },
+    ...history,
+    { role: "user", content: message }
+  ];
+
+  let llmResponse = await requestLlm({
+    apiBase: env.LLM_API_BASE,
+    apiKey: env.LLM_API_KEY,
+    model: env.LLM_MODEL || "doubao-seed-2.0-lite",
+    messages
   });
 
-  if (!llmResponse.ok) {
-    if (llmResponse.status === 429 || llmResponse.status === 402) {
+  if (shouldUseFallback(llmResponse) && hasFallbackLlm(env)) {
+    llmResponse = await requestLlm({
+      apiBase: env.FALLBACK_LLM_API_BASE,
+      apiKey: env.FALLBACK_LLM_API_KEY,
+      model: env.FALLBACK_LLM_MODEL || "deepseek-v4-flash",
+      messages,
+      thinking: { type: "disabled" }
+    });
+  }
+
+  if (!llmResponse || !llmResponse.ok) {
+    const status = llmResponse?.status;
+    if (status === 429 || status === 402) {
       return jsonResponse({
         error: "LLM API limit reached. Please wait and try again.",
         code: "LLM_API_LIMIT_REACHED"
@@ -104,6 +110,39 @@ async function handleChat(request, env) {
   await insertMessage(env, conversation.id, "assistant", reply);
 
   return jsonResponse({ reply });
+}
+
+async function requestLlm({ apiBase, apiKey, model, messages, thinking }) {
+  try {
+    return await fetch(`${trimTrailingSlash(apiBase)}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model,
+        messages,
+        max_tokens: 1024,
+        temperature: 0.7,
+        ...(thinking ? { thinking } : {})
+      })
+    });
+  } catch {
+    return null;
+  }
+}
+
+function shouldUseFallback(response) {
+  return !response || response.status === 402 || response.status === 429 || response.status >= 500;
+}
+
+function hasFallbackLlm(env) {
+  return Boolean(
+    normalizeString(env.FALLBACK_LLM_API_BASE)
+    && normalizeString(env.FALLBACK_LLM_API_KEY)
+    && normalizeString(env.FALLBACK_LLM_MODEL)
+  );
 }
 
 async function handleContact(request, env) {
