@@ -1,69 +1,69 @@
 {
   "bottom_performer": {
     "name": "DCA Aggressive",
-    "reason": "-2.04% net return ($12,244 vs $12,500 invested). Main drags: VOO ($-10, -0.2%), SMH ($-117, -6.3%), VGT ($-128, -2.4%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 40.0% vol, 3.3% max drawdown, Sharpe 7.68.",
-    "return_pct": "-2.04%"
+    "reason": "-2.32% net return ($12,210 vs $12,500 invested). Top contributors: VOO (+$10, +0.2%). Main drags: SMH ($-145, -7.7%), VGT ($-155, -2.9%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Losses ($-300) exceed gains ($10). Risk: 39.0% vol, 3.3% max drawdown, Sharpe 7.32.",
+    "return_pct": "-2.32%"
   },
-  "date": "2026-07-14",
+  "date": "2026-07-15",
   "latest_signals": [
-    "AI Analyst buy AMZN",
-    "AI Analyst buy AXP",
-    "AI Analyst buy BAC"
+    "Quant AI buy QQQ",
+    "Quant AI buy SMH",
+    "Quant AI buy VGT"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$12,672",
+      "current_value": "$12,550",
       "max_drawdown": "1.9%",
-      "sharpe": "9.33",
-      "total_invested": "$12,500",
-      "total_return": "+1.38%",
-      "volatility": "40.0%"
-    },
-    "DCA Aggressive": {
-      "current_value": "$12,244",
-      "max_drawdown": "3.3%",
-      "sharpe": "7.68",
-      "total_invested": "$12,500",
-      "total_return": "-2.04%",
-      "volatility": "40.0%"
-    },
-    "DCA Balanced": {
-      "current_value": "$12,289",
-      "max_drawdown": "2.8%",
-      "sharpe": "8.08",
-      "total_invested": "$12,500",
-      "total_return": "-1.69%",
-      "volatility": "39.0%"
-    },
-    "DCA Conservative": {
-      "current_value": "$12,341",
-      "max_drawdown": "2.1%",
       "sharpe": "8.51",
       "total_invested": "$12,500",
-      "total_return": "-1.27%",
-      "volatility": "38.1%"
+      "total_return": "+0.40%",
+      "volatility": "39.1%"
+    },
+    "DCA Aggressive": {
+      "current_value": "$12,210",
+      "max_drawdown": "3.3%",
+      "sharpe": "7.32",
+      "total_invested": "$12,500",
+      "total_return": "-2.32%",
+      "volatility": "39.0%"
+    },
+    "DCA Balanced": {
+      "current_value": "$12,270",
+      "max_drawdown": "2.8%",
+      "sharpe": "7.75",
+      "total_invested": "$12,500",
+      "total_return": "-1.84%",
+      "volatility": "38.0%"
+    },
+    "DCA Conservative": {
+      "current_value": "$12,339",
+      "max_drawdown": "2.1%",
+      "sharpe": "8.22",
+      "total_invested": "$12,500",
+      "total_return": "-1.29%",
+      "volatility": "37.2%"
     },
     "Quant AI": {
-      "current_value": "$12,400",
+      "current_value": "$12,408",
       "max_drawdown": "1.7%",
-      "sharpe": "8.81",
+      "sharpe": "8.55",
       "total_invested": "$12,500",
-      "total_return": "-0.80%",
-      "volatility": "37.9%"
+      "total_return": "-0.74%",
+      "volatility": "37.0%"
     },
     "SPY Benchmark": {
-      "current_value": "$12,480",
+      "current_value": "$12,529",
       "max_drawdown": "1.2%",
-      "sharpe": "9.43",
+      "sharpe": "9.31",
       "total_invested": "$12,500",
-      "total_return": "-0.16%",
-      "volatility": "37.1%"
+      "total_return": "+0.23%",
+      "volatility": "36.2%"
     }
   },
-  "ranking": "AI Analyst (+1.38%) > SPY Benchmark (-0.16%) > Quant AI (-0.80%) > DCA Conservative (-1.27%) > DCA Balanced (-1.69%) > DCA Aggressive (-2.04%)",
+  "ranking": "AI Analyst (+0.40%) > SPY Benchmark (+0.23%) > Quant AI (-0.74%) > DCA Conservative (-1.29%) > DCA Balanced (-1.84%) > DCA Aggressive (-2.32%)",
   "top_performer": {
     "name": "AI Analyst",
-    "reason": "+1.38% net return ($12,672 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$173, +7.6%), AMD (+$78, +5.6%), UNH (+$67, +4.1%). Main drags: GOOGL ($-2, -1.2%), HD ($-10, -2.2%), INTC ($-53, -19.3%). Gains ($444) outweigh losses ($-272). Risk: 40.0% vol, 1.9% max drawdown, Sharpe 9.33.",
-    "return_pct": "+1.38%"
+    "reason": "+0.40% net return ($12,550 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$107, +4.7%), BAC (+$56, +6.0%), AXP (+$53, +4.5%). Main drags: HD ($-5, -1.1%), INTC ($-63, -22.9%), COST ($-224, -7.1%). Gains ($342) outweigh losses ($-292). Risk: 39.1% vol, 1.9% max drawdown, Sharpe 8.51.",
+    "return_pct": "+0.40%"
   }
 }
