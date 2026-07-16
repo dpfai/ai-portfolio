@@ -1,69 +1,69 @@
 {
   "bottom_performer": {
     "name": "DCA Aggressive",
-    "reason": "-2.32% net return ($12,210 vs $12,500 invested). Top contributors: VOO (+$10, +0.2%). Main drags: SMH ($-145, -7.7%), VGT ($-155, -2.9%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Losses ($-300) exceed gains ($10). Risk: 39.0% vol, 3.3% max drawdown, Sharpe 7.32.",
-    "return_pct": "-2.32%"
+    "reason": "-3.86% net return ($12,018 vs $12,500 invested). Main drags: VOO ($-18, -0.3%), SMH ($-209, -11.2%), VGT ($-255, -4.8%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 38.4% vol, 3.3% max drawdown, Sharpe 6.39.",
+    "return_pct": "-3.86%"
   },
-  "date": "2026-07-15",
+  "date": "2026-07-16",
   "latest_signals": [
     "Quant AI buy QQQ",
     "Quant AI buy SMH",
-    "Quant AI buy VGT"
+    "Quant AI buy SPY"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$12,550",
+      "current_value": "$12,572",
       "max_drawdown": "1.9%",
-      "sharpe": "8.51",
+      "sharpe": "8.33",
       "total_invested": "$12,500",
-      "total_return": "+0.40%",
-      "volatility": "39.1%"
+      "total_return": "+0.58%",
+      "volatility": "38.2%"
     },
     "DCA Aggressive": {
-      "current_value": "$12,210",
+      "current_value": "$12,018",
       "max_drawdown": "3.3%",
-      "sharpe": "7.32",
+      "sharpe": "6.39",
       "total_invested": "$12,500",
-      "total_return": "-2.32%",
-      "volatility": "39.0%"
+      "total_return": "-3.86%",
+      "volatility": "38.4%"
     },
     "DCA Balanced": {
-      "current_value": "$12,270",
+      "current_value": "$12,100",
       "max_drawdown": "2.8%",
-      "sharpe": "7.75",
+      "sharpe": "6.86",
       "total_invested": "$12,500",
-      "total_return": "-1.84%",
-      "volatility": "38.0%"
+      "total_return": "-3.20%",
+      "volatility": "37.4%"
     },
     "DCA Conservative": {
-      "current_value": "$12,339",
+      "current_value": "$12,195",
       "max_drawdown": "2.1%",
-      "sharpe": "8.22",
+      "sharpe": "7.39",
       "total_invested": "$12,500",
-      "total_return": "-1.29%",
-      "volatility": "37.2%"
+      "total_return": "-2.44%",
+      "volatility": "36.5%"
     },
     "Quant AI": {
-      "current_value": "$12,408",
+      "current_value": "$12,275",
       "max_drawdown": "1.7%",
-      "sharpe": "8.55",
+      "sharpe": "7.74",
       "total_invested": "$12,500",
-      "total_return": "-0.74%",
-      "volatility": "37.0%"
+      "total_return": "-1.80%",
+      "volatility": "36.3%"
     },
     "SPY Benchmark": {
-      "current_value": "$12,529",
+      "current_value": "$12,461",
       "max_drawdown": "1.2%",
-      "sharpe": "9.31",
+      "sharpe": "8.72",
       "total_invested": "$12,500",
-      "total_return": "+0.23%",
-      "volatility": "36.2%"
+      "total_return": "-0.31%",
+      "volatility": "35.3%"
     }
   },
-  "ranking": "AI Analyst (+0.40%) > SPY Benchmark (+0.23%) > Quant AI (-0.74%) > DCA Conservative (-1.29%) > DCA Balanced (-1.84%) > DCA Aggressive (-2.32%)",
+  "ranking": "AI Analyst (+0.58%) > SPY Benchmark (-0.31%) > Quant AI (-1.80%) > DCA Conservative (-2.44%) > DCA Balanced (-3.20%) > DCA Aggressive (-3.86%)",
   "top_performer": {
     "name": "AI Analyst",
-    "reason": "+0.40% net return ($12,550 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$107, +4.7%), BAC (+$56, +6.0%), AXP (+$53, +4.5%). Main drags: HD ($-5, -1.1%), INTC ($-63, -22.9%), COST ($-224, -7.1%). Gains ($342) outweigh losses ($-292). Risk: 39.1% vol, 1.9% max drawdown, Sharpe 8.51.",
-    "return_pct": "+0.40%"
+    "reason": "+0.58% net return ($12,572 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$136, +6.0%), AXP (+$64, +5.4%), UNH (+$60, +3.7%). Main drags: GOOGL ($-4, -2.6%), AMD ($-50, -3.5%), INTC ($-75, -27.4%). Gains ($332) outweigh losses ($-260). Risk: 38.2% vol, 1.9% max drawdown, Sharpe 8.33.",
+    "return_pct": "+0.58%"
   }
 }
