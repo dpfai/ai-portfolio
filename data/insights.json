@@ -1,69 +1,69 @@
 {
   "bottom_performer": {
     "name": "DCA Aggressive",
-    "reason": "-4.98% net return ($11,878 vs $12,500 invested). Main drags: VOO ($-71, -1.3%), SMH ($-245, -13.1%), VGT ($-305, -5.8%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 37.7% vol, 3.3% max drawdown, Sharpe 5.75.",
-    "return_pct": "-4.98%"
+    "reason": "-4.94% net return ($11,883 vs $12,500 invested). Main drags: VOO ($-79, -1.5%), SMH ($-239, -12.7%), VGT ($-300, -5.6%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 36.9% vol, 3.3% max drawdown, Sharpe 5.62.",
+    "return_pct": "-4.94%"
   },
-  "date": "2026-07-17",
+  "date": "2026-07-20",
   "latest_signals": [
-    "Quant AI buy QQQ",
     "Quant AI buy SMH",
-    "Quant AI buy SPY"
+    "Quant AI buy SPY",
+    "Quant AI buy VOO"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$12,517",
+      "current_value": "$12,427",
       "max_drawdown": "1.9%",
-      "sharpe": "7.89",
+      "sharpe": "7.36",
       "total_invested": "$12,500",
-      "total_return": "+0.14%",
-      "volatility": "37.4%"
+      "total_return": "-0.58%",
+      "volatility": "36.6%"
     },
     "DCA Aggressive": {
-      "current_value": "$11,878",
+      "current_value": "$11,883",
       "max_drawdown": "3.3%",
-      "sharpe": "5.75",
+      "sharpe": "5.62",
       "total_invested": "$12,500",
-      "total_return": "-4.98%",
-      "volatility": "37.7%"
+      "total_return": "-4.94%",
+      "volatility": "36.9%"
     },
     "DCA Balanced": {
-      "current_value": "$11,965",
+      "current_value": "$11,966",
       "max_drawdown": "2.8%",
-      "sharpe": "6.19",
+      "sharpe": "6.04",
       "total_invested": "$12,500",
-      "total_return": "-4.28%",
-      "volatility": "36.8%"
+      "total_return": "-4.27%",
+      "volatility": "35.9%"
     },
     "DCA Conservative": {
-      "current_value": "$12,066",
-      "max_drawdown": "2.2%",
-      "sharpe": "6.70",
+      "current_value": "$12,063",
+      "max_drawdown": "2.3%",
+      "sharpe": "6.52",
       "total_invested": "$12,500",
-      "total_return": "-3.47%",
-      "volatility": "35.8%"
+      "total_return": "-3.50%",
+      "volatility": "35.1%"
     },
     "Quant AI": {
-      "current_value": "$12,134",
+      "current_value": "$12,129",
       "max_drawdown": "2.2%",
-      "sharpe": "6.98",
+      "sharpe": "6.78",
       "total_invested": "$12,500",
-      "total_return": "-2.93%",
-      "volatility": "35.7%"
+      "total_return": "-2.97%",
+      "volatility": "34.9%"
     },
     "SPY Benchmark": {
-      "current_value": "$12,338",
-      "max_drawdown": "1.5%",
-      "sharpe": "7.95",
+      "current_value": "$12,318",
+      "max_drawdown": "1.7%",
+      "sharpe": "7.66",
       "total_invested": "$12,500",
-      "total_return": "-1.30%",
-      "volatility": "34.7%"
+      "total_return": "-1.45%",
+      "volatility": "33.9%"
     }
   },
-  "ranking": "AI Analyst (+0.14%) > SPY Benchmark (-1.30%) > Quant AI (-2.93%) > DCA Conservative (-3.47%) > DCA Balanced (-4.28%) > DCA Aggressive (-4.98%)",
+  "ranking": "AI Analyst (-0.58%) > SPY Benchmark (-1.45%) > Quant AI (-2.97%) > DCA Conservative (-3.50%) > DCA Balanced (-4.27%) > DCA Aggressive (-4.94%)",
   "top_performer": {
     "name": "AI Analyst",
-    "reason": "+0.14% net return ($12,517 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$165, +7.3%), UNH (+$71, +4.4%), BAC (+$51, +5.4%). Main drags: AMZN ($-0, -0.1%), MS ($-2, -1.2%), GOOGL ($-7, -4.7%). Gains ($332) outweigh losses ($-314). Risk: 37.4% vol, 1.9% max drawdown, Sharpe 7.89.",
-    "return_pct": "+0.14%"
+    "reason": "-0.58% net return ($12,427 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$124, +5.5%), UNH (+$53, +3.3%), BAC (+$37, +3.9%). Main drags: TSLA ($-2, -2.4%), GOOGL ($-5, -3.3%), MS ($-7, -3.2%). Risk: 36.6% vol, 1.9% max drawdown, Sharpe 7.36.",
+    "return_pct": "-0.58%"
   }
 }
