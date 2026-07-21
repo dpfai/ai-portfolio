@@ -1,69 +1,69 @@
 {
   "bottom_performer": {
     "name": "DCA Aggressive",
-    "reason": "-4.94% net return ($11,883 vs $12,500 invested). Main drags: VOO ($-79, -1.5%), SMH ($-239, -12.7%), VGT ($-300, -5.6%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 36.9% vol, 3.3% max drawdown, Sharpe 5.62.",
-    "return_pct": "-4.94%"
+    "reason": "-2.90% net return ($12,623 vs $13,000 invested). Main drags: VOO ($-35, -0.6%), SMH ($-165, -8.5%), VGT ($-177, -3.2%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 41.4% vol, 3.3% max drawdown, Sharpe 6.62.",
+    "return_pct": "-2.90%"
   },
-  "date": "2026-07-20",
+  "date": "2026-07-21",
   "latest_signals": [
-    "Quant AI buy SMH",
-    "Quant AI buy SPY",
-    "Quant AI buy VOO"
+    "AI Analyst buy AMZN",
+    "AI Analyst buy AXP",
+    "AI Analyst buy BAC"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$12,427",
+      "current_value": "$13,136",
       "max_drawdown": "1.9%",
-      "sharpe": "7.36",
-      "total_invested": "$12,500",
-      "total_return": "-0.58%",
-      "volatility": "36.6%"
+      "sharpe": "8.22",
+      "total_invested": "$13,000",
+      "total_return": "+1.05%",
+      "volatility": "40.3%"
     },
     "DCA Aggressive": {
-      "current_value": "$11,883",
+      "current_value": "$12,623",
       "max_drawdown": "3.3%",
-      "sharpe": "5.62",
-      "total_invested": "$12,500",
-      "total_return": "-4.94%",
-      "volatility": "36.9%"
+      "sharpe": "6.62",
+      "total_invested": "$13,000",
+      "total_return": "-2.90%",
+      "volatility": "41.4%"
     },
     "DCA Balanced": {
-      "current_value": "$11,966",
+      "current_value": "$12,682",
       "max_drawdown": "2.8%",
-      "sharpe": "6.04",
-      "total_invested": "$12,500",
-      "total_return": "-4.27%",
-      "volatility": "35.9%"
+      "sharpe": "7.00",
+      "total_invested": "$13,000",
+      "total_return": "-2.44%",
+      "volatility": "40.2%"
     },
     "DCA Conservative": {
-      "current_value": "$12,063",
+      "current_value": "$12,750",
       "max_drawdown": "2.3%",
-      "sharpe": "6.52",
-      "total_invested": "$12,500",
-      "total_return": "-3.50%",
-      "volatility": "35.1%"
+      "sharpe": "7.44",
+      "total_invested": "$13,000",
+      "total_return": "-1.92%",
+      "volatility": "39.0%"
     },
     "Quant AI": {
-      "current_value": "$12,129",
+      "current_value": "$12,797",
       "max_drawdown": "2.2%",
-      "sharpe": "6.78",
-      "total_invested": "$12,500",
-      "total_return": "-2.97%",
-      "volatility": "34.9%"
+      "sharpe": "7.67",
+      "total_invested": "$13,000",
+      "total_return": "-1.57%",
+      "volatility": "38.5%"
     },
     "SPY Benchmark": {
-      "current_value": "$12,318",
+      "current_value": "$12,921",
       "max_drawdown": "1.7%",
-      "sharpe": "7.66",
-      "total_invested": "$12,500",
-      "total_return": "-1.45%",
-      "volatility": "33.9%"
+      "sharpe": "8.49",
+      "total_invested": "$13,000",
+      "total_return": "-0.61%",
+      "volatility": "36.8%"
     }
   },
-  "ranking": "AI Analyst (-0.58%) > SPY Benchmark (-1.45%) > Quant AI (-2.97%) > DCA Conservative (-3.50%) > DCA Balanced (-4.27%) > DCA Aggressive (-4.94%)",
+  "ranking": "AI Analyst (+1.05%) > SPY Benchmark (-0.61%) > Quant AI (-1.57%) > DCA Conservative (-1.92%) > DCA Balanced (-2.44%) > DCA Aggressive (-2.90%)",
   "top_performer": {
     "name": "AI Analyst",
-    "reason": "-0.58% net return ($12,427 vs $12,500 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$124, +5.5%), UNH (+$53, +3.3%), BAC (+$37, +3.9%). Main drags: TSLA ($-2, -2.4%), GOOGL ($-5, -3.3%), MS ($-7, -3.2%). Risk: 36.6% vol, 1.9% max drawdown, Sharpe 7.36.",
-    "return_pct": "-0.58%"
+    "reason": "+1.05% net return ($13,136 vs $13,000 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$142, +6.2%), UNH (+$111, +6.9%), AMD (+$68, +4.8%). Main drags: MS ($-2, -0.7%), GOOGL ($-7, -4.6%), HD ($-18, -4.0%). Gains ($404) outweigh losses ($-267). Risk: 40.3% vol, 1.9% max drawdown, Sharpe 8.22.",
+    "return_pct": "+1.05%"
   }
 }
