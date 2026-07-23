@@ -1,69 +1,69 @@
 {
   "bottom_performer": {
     "name": "DCA Aggressive",
-    "reason": "-3.02% net return ($12,607 vs $13,000 invested). Main drags: VOO ($-42, -0.8%), SMH ($-156, -8.0%), VGT ($-195, -3.5%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 40.6% vol, 3.3% max drawdown, Sharpe 6.42.",
-    "return_pct": "-3.02%"
+    "reason": "-4.13% net return ($12,463 vs $13,000 invested). Main drags: VOO ($-109, -2.0%), SMH ($-177, -9.1%), VGT ($-251, -4.5%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). All positions negative, worst is VOO. Risk: 39.9% vol, 3.3% max drawdown, Sharpe 5.91.",
+    "return_pct": "-4.13%"
   },
-  "date": "2026-07-22",
+  "date": "2026-07-23",
   "latest_signals": [
-    "Quant AI buy SMH",
     "Quant AI buy SPY",
+    "Quant AI sell VGT",
     "Quant AI buy VOO"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$13,178",
+      "current_value": "$13,037",
       "max_drawdown": "1.9%",
-      "sharpe": "8.12",
+      "sharpe": "7.52",
       "total_invested": "$13,000",
-      "total_return": "+1.37%",
-      "volatility": "39.5%"
+      "total_return": "+0.29%",
+      "volatility": "38.9%"
     },
     "DCA Aggressive": {
-      "current_value": "$12,607",
+      "current_value": "$12,463",
       "max_drawdown": "3.3%",
-      "sharpe": "6.42",
+      "sharpe": "5.91",
       "total_invested": "$13,000",
-      "total_return": "-3.02%",
-      "volatility": "40.6%"
+      "total_return": "-4.13%",
+      "volatility": "39.9%"
     },
     "DCA Balanced": {
-      "current_value": "$12,663",
+      "current_value": "$12,517",
       "max_drawdown": "2.8%",
-      "sharpe": "6.78",
+      "sharpe": "6.23",
       "total_invested": "$13,000",
-      "total_return": "-2.59%",
-      "volatility": "39.4%"
+      "total_return": "-3.71%",
+      "volatility": "38.8%"
     },
     "DCA Conservative": {
-      "current_value": "$12,729",
+      "current_value": "$12,580",
       "max_drawdown": "2.3%",
-      "sharpe": "7.20",
+      "sharpe": "6.60",
       "total_invested": "$13,000",
-      "total_return": "-2.09%",
-      "volatility": "38.2%"
+      "total_return": "-3.23%",
+      "volatility": "37.6%"
     },
     "Quant AI": {
-      "current_value": "$12,766",
+      "current_value": "$12,591",
       "max_drawdown": "2.2%",
-      "sharpe": "7.40",
+      "sharpe": "6.70",
       "total_invested": "$13,000",
-      "total_return": "-1.80%",
-      "volatility": "37.7%"
+      "total_return": "-3.14%",
+      "volatility": "37.3%"
     },
     "SPY Benchmark": {
-      "current_value": "$12,906",
+      "current_value": "$12,747",
       "max_drawdown": "1.7%",
-      "sharpe": "8.23",
+      "sharpe": "7.51",
       "total_invested": "$13,000",
-      "total_return": "-0.72%",
-      "volatility": "36.1%"
+      "total_return": "-1.95%",
+      "volatility": "35.6%"
     }
   },
-  "ranking": "AI Analyst (+1.37%) > SPY Benchmark (-0.72%) > Quant AI (-1.80%) > DCA Conservative (-2.09%) > DCA Balanced (-2.59%) > DCA Aggressive (-3.02%)",
+  "ranking": "AI Analyst (+0.29%) > SPY Benchmark (-1.95%) > Quant AI (-3.14%) > DCA Conservative (-3.23%) > DCA Balanced (-3.71%) > DCA Aggressive (-4.13%)",
   "top_performer": {
     "name": "AI Analyst",
-    "reason": "+1.37% net return ($13,178 vs $13,000 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$190, +8.4%), UNH (+$91, +5.6%), AMD (+$89, +6.4%). Main drags: NKE ($-0, -1.7%), META ($-1, -2.6%), TSLA ($-1, -1.3%). Gains ($464) outweigh losses ($-286). Risk: 39.5% vol, 1.9% max drawdown, Sharpe 8.12.",
-    "return_pct": "+1.37%"
+    "reason": "+0.29% net return ($13,037 vs $13,000 invested). Strategy: LLM-based market analysis with selective stock picks. Top contributors: JNJ (+$225, +9.9%), UNH (+$61, +3.7%), AMD (+$55, +3.9%). Main drags: NKE ($-1, -4.6%), META ($-2, -5.9%), BMNR ($-2, -3.7%). Gains ($398) outweigh losses ($-360). Risk: 38.9% vol, 1.9% max drawdown, Sharpe 7.52.",
+    "return_pct": "+0.29%"
   }
 }
