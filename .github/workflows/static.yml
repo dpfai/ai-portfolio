@@ -36,7 +36,7 @@ jobs:
       - name: Build public site
         run: |
           mkdir _site
-          cp ./*.html ./*.js _site/
+          cp ./*.html ./*.js ./*.css _site/
           cp -R assets data _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
