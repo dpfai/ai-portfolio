@@ -1,0 +1,16 @@
+**/.git
+**/.git/**
+**/.wrangler
+**/.wrangler/**
+.env
+.env.*
+.gitignore
+.assetsignore
+README.md
+wrangler.jsonc
+worker
+worker/**
+scripts
+scripts/**
+tests
+tests/**
