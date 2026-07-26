@@ -101,7 +101,7 @@
   <script src="analysis.js?v=20260628-15"></script>
   <div class="chat-bubble" id="chatBubble">
     <div class="chat-hint" id="chatHint" onclick="toggleChat()">
-      💬 Ask AI about PD <span class="arrow" style="font-size:18px;">&mdash;&gt;</span>
+      💬 Ask PD’s AI assistant <span class="arrow" style="font-size:18px;">&mdash;&gt;</span>
     </div>
     <button class="chat-fab-btn" onclick="toggleChat()">
       <span class="chat-pulse"></span>
@@ -110,11 +110,11 @@
   </div>
   <div class="chat-panel" id="chatPanel">
     <div class="chat-header">
-      <span>💬 Ask me about PD</span>
+      <span>💬 PD’s AI Assistant</span>
       <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;">×</button>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="chat-msg bot">Hi! I'm PD's AI assistant. Ask me about his projects, skills, experience, or the Trading Arena!</div>
+      <div class="chat-msg bot">Ask me about AdEval Causal, AI Trading Arena, PD's measurement experience, or the methods behind these projects.</div>
     </div>
     <div class="chat-input-area">
       <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter')sendChat()">
@@ -123,5 +123,6 @@
   </div>
   <script>const CHATBOT_API_URL = "https://pd-lab-chatbot.dpfstat.workers.dev";</script>
   <script src="chat.js"></script>
+  <script src="portfolio-nav.js?v=20260726-3"></script>
 </body>
 </html>

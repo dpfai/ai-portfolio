@@ -24,10 +24,6 @@
       ]
     }
   ],
-  "education": [
-    { "school": "Pennsylvania State University", "degree": "M.S., Applied Statistics" },
-    { "school": "Iowa State University", "degree": "Ph.D., Organic Chemistry" }
-  ],
   "skills": {
     "core": ["Statistical Modeling", "Machine Learning", "Causal Inference", "Experimentation"],
     "marketing_science": ["Marketing Mix Modeling (MMM)", "Multi-Touch Attribution (MTA)", "Incrementality Measurement", "Geo Experimentation"],

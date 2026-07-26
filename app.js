@@ -135,6 +135,7 @@ function renderSignals(signals) {
   const container = document.getElementById('signalsList');
   if (!container) return;
   if (!signals.length) { container.innerHTML = '<p style="color:#8892b0;text-align:center;padding:20px">No signals yet.</p>'; return; }
+  const showReason = document.body.classList.contains('portfolio-trading-page');
   const sorted = [...signals].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 20);
   const rows = sorted.map(s => {
     const meta = STRATEGY_META[s.source] || { name: s.source, color: '#888' };
@@ -146,10 +147,11 @@ function renderSignals(signals) {
       <td style="font-weight:600">${s.ticker}</td>
       <td>${fmtMoney(s.price)}</td>
       <td>${s.shares?.toFixed(2) || '-'}</td>
+      ${showReason ? `<td class="reason-cell">${s.reason || '-'}</td>` : ''}
     </tr>`;
   }).join('');
   container.innerHTML = `<table>
-    <thead><tr><th>Date</th><th>Strategy</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th></tr></thead>
+    <thead><tr><th>Date</th><th>Strategy</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th>${showReason ? '<th>Decision reason</th>' : ''}</tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
 }

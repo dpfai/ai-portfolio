@@ -1,7 +1,6 @@
 {
   "identity": {
     "role": "Data Scientist & AI Engineer",
-    "education": "M.S. in Applied Statistics and Ph.D. in Organic Chemistry",
     "location": "Sunnyvale, CA",
     "note": "Do NOT reveal the person's real name, email, phone number."
   },
@@ -51,11 +50,52 @@
     ]
   },
   "projects": {
+    "adeval_causal": {
+      "description": "An open-source synthetic research workbench testing whether improvements in offline AI creative quality translate into incremental advertising outcomes after deployment.",
+      "central_question": "Does better offline AI performance lead to better causal outcomes after deployment?",
+      "measurement_chain": [
+        "Offline output quality",
+        "Advertiser adoption",
+        "Behavior change",
+        "Campaign performance",
+        "Incremental business value"
+      ],
+      "what_pd_built": [
+        "A structured evaluation workflow comparing deterministic checks, human ratings, and model-based grading",
+        "A synthetic advertiser-level randomized experiment",
+        "Reproducible intention-to-treat effect estimation, confidence intervals, balance checks, and experiment diagnostics",
+        "An offline-versus-online comparison showing why AI quality scores are not automatically causal business evidence",
+        "A decision view separating quality gates, causal evidence, uncertainty, and recommendations"
+      ],
+      "methodological_principle": "LLMs may evaluate creative outputs, but deterministic statistical code—not an LLM—produces treatment-effect estimates, uncertainty intervals, and experiment diagnostics.",
+      "data_note": "The demo uses synthetic data for methodological illustration and does not make empirical claims about any real advertising platform or advertiser population.",
+      "tech": ["AI Evaluation", "Causal Inference", "Randomized Experiments", "Incrementality", "Python", "Streamlit", "Plotly", "Pydantic", "pytest"],
+      "repo": "https://github.com/dpfai/AdEval-Causal",
+      "live_demo": "https://adeval-causal.streamlit.app/",
+      "status": "In Progress"
+    },
     "ai_trading_arena": {
-      "description": "A virtual trading competition where $10,000 starting capital and $500 weekly deposits are managed by four independent strategies: an LLM-based AI Analyst, a four-vote composite quant system (MA/RSI/Bollinger/Random Forest), a DCA baseline, and an ETF benchmark. Fully automated daily data pipeline.",
-      "tech": ["Random Forest", "Feature Engineering", "SQLite", "OpenClaw", "Automation"],
+      "description": "A live research environment comparing six AI, quantitative, DCA, and benchmark strategies under the same capital, contribution, pricing, and execution rules.",
+      "research_design": "$10,000 starting capital and $500 weekly contributions are applied consistently so differences in the equity curves reflect allocation and decision rules rather than unequal funding.",
+      "strategies": {
+        "AI Analyst": "LLM-assisted weekly market analysis and selective stock decisions with visible decision reasons.",
+        "Quant AI": "A four-vote system combining MA20/MA50 crossover, RSI mean reversion, Bollinger Bands, and a machine-learning direction classifier.",
+        "DCA Aggressive": "A tech-heavy VOO/VGT/SMH portfolio with the highest semiconductor allocation.",
+        "DCA Balanced": "A middle-risk VOO/VGT/SMH allocation.",
+        "DCA Conservative": "A broad-market-heavy allocation with lower technology and semiconductor exposure.",
+        "SPY Benchmark": "SPY buy-and-hold with the same weekly contribution schedule."
+      },
+      "automation": "An OpenClaw workflow runs the daily data pipeline, refreshing market prices, AI and quantitative signals, holdings, portfolio values, data-health checks, and performance insights.",
+      "outputs": [
+        "Interactive equity curves with time-range filters",
+        "Strategy-level portfolio value, cash, return, and signal counts",
+        "AI-generated top-performer and underperformer summaries grounded in computed metrics",
+        "Recent trading decisions with visible reasons",
+        "Holdings, risk metrics, drawdown, volatility, and Sharpe-ratio context"
+      ],
+      "tech": ["Python", "Machine Learning", "Random Forest", "Technical Indicators", "LLM Analysis", "Chart.js", "OpenClaw", "Automated Daily Data Pipeline"],
       "repo": "https://github.com/dpfai/ai-portfolio",
-      "note": "For specific algorithm details, direct visitors to the repo and method.html page."
+      "note": "This is an educational research sandbox, not financial advice. For implementation details, direct visitors to the repository."
     },
     "conductor": {
       "description": "A CLI tool that orchestrates multiple AI coding agents (Claude Code, Codex) to collaborate on software engineering tasks.",
@@ -92,6 +132,7 @@
       "Real name",
       "Email address",
       "Phone number",
+      "Education history, degrees, and schools",
       "API keys or technical implementation secrets",
       "Internal system architecture details",
       "Current employer, clients, employer-specific tenure, internal work projects, teams, or internal tools",
@@ -102,7 +143,7 @@
       "Aggregate data science experience of 4-5 years",
       "Professional focus areas and interests",
       "General role description and responsibilities",
-      "Skills, education, project descriptions, GitHub links"
+      "Skills, project descriptions, GitHub links"
     ],
     "when_asked_about_personal_info": "Offer to leave their email and anything they would like PD to know so PD can follow up.",
     "when_asked_about_specific_algorithms": "Direct them to the relevant GitHub repository for technical details.",
