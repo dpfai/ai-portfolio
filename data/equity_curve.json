@@ -2162,11 +2162,11 @@
   {
     "cash": 22.676147364297215,
     "date": "2026-08-12",
-    "positions_value": 14535.245691853263,
-    "return_pct": 0.003994609601210963,
+    "positions_value": 14535.2634898714,
+    "return_pct": 0.003995837050737715,
     "source": "ai_analyst",
     "total_cost": 14500.0,
-    "total_value": 14557.921839217559
+    "total_value": 14557.939637235697
   },
   {
     "cash": 0.0,
@@ -2196,13 +2196,13 @@
     "total_value": 14751.16147373432
   },
   {
-    "cash": 357.76053989087416,
+    "cash": 456.3415561111316,
     "date": "2026-08-12",
-    "positions_value": 14353.632714250276,
-    "return_pct": 0.014578845113182791,
+    "positions_value": 14255.041352104554,
+    "return_pct": 0.01457813160108181,
     "source": "quant_learning",
     "total_cost": 14500.0,
-    "total_value": 14711.39325414115
+    "total_value": 14711.382908215686
   },
   {
     "cash": 0.0,
@@ -2212,5 +2212,59 @@
     "source": "spy",
     "total_cost": 14500.0,
     "total_value": 14862.306353269081
+  },
+  {
+    "cash": 22.676147364297215,
+    "date": "2026-08-13",
+    "positions_value": 14560.516420433634,
+    "return_pct": 0.0057374184688228054,
+    "source": "ai_analyst",
+    "total_cost": 14500.0,
+    "total_value": 14583.19256779793
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-08-13",
+    "positions_value": 14734.550939944465,
+    "return_pct": 0.016175926892721754,
+    "source": "etf_aggressive",
+    "total_cost": 14500.0,
+    "total_value": 14734.550939944465
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-08-13",
+    "positions_value": 14804.334836565384,
+    "return_pct": 0.020988609418302325,
+    "source": "etf_balanced",
+    "total_cost": 14500.0,
+    "total_value": 14804.334836565384
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-08-13",
+    "positions_value": 14875.119338708762,
+    "return_pct": 0.025870299221293958,
+    "source": "etf_conservative",
+    "total_cost": 14500.0,
+    "total_value": 14875.119338708762
+  },
+  {
+    "cash": 373.61937107027114,
+    "date": "2026-08-13",
+    "positions_value": 14453.797436925344,
+    "return_pct": 0.022580469516939046,
+    "source": "quant_learning",
+    "total_cost": 14500.0,
+    "total_value": 14827.416807995616
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-08-13",
+    "positions_value": 14966.007436734746,
+    "return_pct": 0.03213844391274111,
+    "source": "spy",
+    "total_cost": 14500.0,
+    "total_value": 14966.007436734746
   }
 ]
