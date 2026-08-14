@@ -1,68 +1,67 @@
 {
   "bottom_performer": {
     "name": "AI Analyst",
-    "reason": "+0.57% net return ($14,583 vs $14,500 invested). Top contributors: JNJ (+$254, +10.9%), BAC (+$117, +6.4%), NVDA (+$46, +13.9%). Main drags: NKE ($-1, -4.0%), META ($-2, -7.6%), GOOGL ($-7, -3.6%). Strategy: LLM-based market analysis with selective stock picks. Risk: 35.5% vol, 1.9% max drawdown, Sharpe 7.40.",
-    "return_pct": "+0.57%"
+    "reason": "+1.13% net return ($14,664 vs $14,500 invested). Top contributors: JNJ (+$237, +10.2%), BAC (+$129, +7.1%), NVDA (+$46, +13.8%). Main drags: MS ($-0, -0.1%), NKE ($-1, -5.2%), META ($-2, -8.4%). Strategy: LLM-based market analysis with selective stock picks. Risk: 35.1% vol, 1.9% max drawdown, Sharpe 7.41.",
+    "return_pct": "+1.13%"
   },
-  "date": "2026-08-13",
+  "date": "2026-08-14",
   "latest_signals": [
-    "Quant AI sell VGT",
     "Quant AI buy VOO"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$14,583",
+      "current_value": "$14,664",
       "max_drawdown": "1.9%",
-      "sharpe": "7.40",
+      "sharpe": "7.41",
       "total_invested": "$14,500",
-      "total_return": "+0.57%",
-      "volatility": "35.5%"
+      "total_return": "+1.13%",
+      "volatility": "35.1%"
     },
     "DCA Aggressive": {
-      "current_value": "$14,735",
+      "current_value": "$14,696",
       "max_drawdown": "3.3%",
-      "sharpe": "6.61",
+      "sharpe": "6.46",
       "total_invested": "$14,500",
-      "total_return": "+1.62%",
-      "volatility": "40.4%"
+      "total_return": "+1.35%",
+      "volatility": "39.9%"
     },
     "DCA Balanced": {
-      "current_value": "$14,804",
+      "current_value": "$14,766",
       "max_drawdown": "2.8%",
-      "sharpe": "6.95",
+      "sharpe": "6.79",
       "total_invested": "$14,500",
-      "total_return": "+2.10%",
-      "volatility": "39.1%"
+      "total_return": "+1.84%",
+      "volatility": "38.6%"
     },
     "DCA Conservative": {
-      "current_value": "$14,875",
+      "current_value": "$14,839",
       "max_drawdown": "2.3%",
-      "sharpe": "7.33",
+      "sharpe": "7.17",
       "total_invested": "$14,500",
-      "total_return": "+2.59%",
-      "volatility": "37.7%"
+      "total_return": "+2.33%",
+      "volatility": "37.3%"
     },
     "Quant AI": {
-      "current_value": "$14,827",
+      "current_value": "$14,801",
       "max_drawdown": "2.2%",
-      "sharpe": "7.47",
+      "sharpe": "7.32",
       "total_invested": "$14,500",
-      "total_return": "+2.26%",
-      "volatility": "36.8%"
+      "total_return": "+2.08%",
+      "volatility": "36.4%"
     },
     "SPY Benchmark": {
-      "current_value": "$14,966",
+      "current_value": "$14,936",
       "max_drawdown": "1.7%",
-      "sharpe": "8.22",
+      "sharpe": "8.04",
       "total_invested": "$14,500",
-      "total_return": "+3.21%",
-      "volatility": "34.8%"
+      "total_return": "+3.01%",
+      "volatility": "34.3%"
     }
   },
-  "ranking": "SPY Benchmark (+3.21%) > DCA Conservative (+2.59%) > Quant AI (+2.26%) > DCA Balanced (+2.10%) > DCA Aggressive (+1.62%) > AI Analyst (+0.57%)",
+  "ranking": "SPY Benchmark (+3.01%) > DCA Conservative (+2.33%) > Quant AI (+2.08%) > DCA Balanced (+1.84%) > DCA Aggressive (+1.35%) > AI Analyst (+1.13%)",
   "top_performer": {
     "name": "SPY Benchmark",
-    "reason": "+3.21% net return ($14,966 vs $14,500 invested). Strategy: Passive S&P 500 benchmark. Top contributors: SPY (+$466, +3.2%). All positions profitable, led by SPY. Risk: 34.8% vol, 1.7% max drawdown, Sharpe 8.22.",
-    "return_pct": "+3.21%"
+    "reason": "+3.01% net return ($14,936 vs $14,500 invested). Strategy: Passive S&P 500 benchmark. Top contributors: SPY (+$436, +3.0%). All positions profitable, led by SPY. Risk: 34.3% vol, 1.7% max drawdown, Sharpe 8.04.",
+    "return_pct": "+3.01%"
   }
 }

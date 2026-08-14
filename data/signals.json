@@ -4145,5 +4145,18 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
+  },
+  {
+    "action": "buy",
+    "amount": 93.40484276756783,
+    "cash_after": 280.21452830270346,
+    "date": "2026-08-14",
+    "id": "ql_20260814_VOO_buy",
+    "price": 713.6099853515625,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.13089060507127237,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
