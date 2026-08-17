@@ -4158,5 +4158,44 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
+  },
+  {
+    "action": "sell",
+    "amount": 167.98364612035664,
+    "cash_after": 325.60431829062736,
+    "date": "2026-08-17",
+    "id": "ql_20260817_SMH_sell",
+    "price": 594.0700073242188,
+    "reason": "votes bull=0 bear=2; {'ma20_50': -1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': -1}",
+    "shares": 0.2827674247972565,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SMH"
+  },
+  {
+    "action": "buy",
+    "amount": 70.05363207567586,
+    "cash_after": 210.1608962270276,
+    "date": "2026-08-17",
+    "id": "ql_20260817_SPY_buy",
+    "price": 772.6699829101562,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.09066436334413873,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 52.5402240567569,
+    "cash_after": 157.6206721702707,
+    "date": "2026-08-17",
+    "id": "ql_20260817_VOO_buy",
+    "price": 710.27001953125,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.07397218327113309,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
