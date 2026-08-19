@@ -4230,9 +4230,9 @@
     "cash_after": 179.27791854595395,
     "date": "2026-08-18",
     "id": "ai_analyst_2026-08-18_INTC_buy",
-    "price": 96.68499755859375,
+    "price": 96.69000244140625,
     "reason": "OpenClaw weekly analysis: BUY signal; advice=hold; technical=buy; trend=bullish alignment; score=61/100; confidence=medium; target=105.00; stop=98.50",
-    "shares": 0.7946775156713279,
+    "shares": 0.7946363814512509,
     "source": "ai_analyst",
     "strategy": "llm_analysis",
     "ticker": "INTC"
@@ -4464,9 +4464,9 @@
     "cash_after": 464.40242903847786,
     "date": "2026-08-18",
     "id": "ql_20260818_VOO_buy",
-    "price": 705.3300170898438,
+    "price": 705.4000244140625,
     "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
-    "shares": 0.21947287926039644,
+    "shares": 0.21945109770598215,
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
@@ -4483,5 +4483,44 @@
     "source": "spy",
     "strategy": "buy_hold",
     "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 87.0754554447146,
+    "cash_after": 261.2263663341438,
+    "date": "2026-08-19",
+    "id": "ql_20260819_SPY_buy",
+    "price": 769.0999755859375,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.1132173426196982,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 48.97994368765196,
+    "cash_after": 146.93983106295588,
+    "date": "2026-08-19",
+    "id": "ql_20260819_VGT_buy",
+    "price": 118.80000305175781,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.4122890776889356,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 65.30659158353595,
+    "cash_after": 195.91977475060784,
+    "date": "2026-08-19",
+    "id": "ql_20260819_VOO_buy",
+    "price": 706.9099731445312,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.09238318041126814,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
