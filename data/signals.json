@@ -4899,5 +4899,44 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
+  },
+  {
+    "action": "buy",
+    "amount": 22.738220628937256,
+    "cash_after": 68.21466188681177,
+    "date": "2026-08-27",
+    "id": "ql_20260827_SPY_buy",
+    "price": 771.0999755859375,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.02948803183615602,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 12.790249103777207,
+    "cash_after": 38.37074731133162,
+    "date": "2026-08-27",
+    "id": "ql_20260827_VGT_buy",
+    "price": 121.91000366210938,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.10491550093975201,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 17.053665471702942,
+    "cash_after": 51.160996415108826,
+    "date": "2026-08-27",
+    "id": "ql_20260827_VOO_buy",
+    "price": 708.780029296875,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.024060589698923295,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
