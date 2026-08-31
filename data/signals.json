@@ -4977,5 +4977,44 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
+  },
+  {
+    "action": "buy",
+    "amount": 3.035186066619005,
+    "cash_after": 9.105558199857015,
+    "date": "2026-08-31",
+    "id": "ql_20260831_QQQ_buy",
+    "price": 716.760009765625,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.004234591809344229,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "QQQ"
+  },
+  {
+    "action": "buy",
+    "amount": 4.046914755492007,
+    "cash_after": 12.14074426647602,
+    "date": "2026-08-31",
+    "id": "ql_20260831_SPY_buy",
+    "price": 767.02001953125,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.005276152711066399,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 2.2763895499642537,
+    "cash_after": 6.829168649892761,
+    "date": "2026-08-31",
+    "id": "ql_20260831_VOO_buy",
+    "price": 705.0399780273438,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.0032287382572736435,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
