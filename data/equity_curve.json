@@ -3008,11 +3008,11 @@
   {
     "cash": 50.74014550036529,
     "date": "2026-09-02",
-    "positions_value": 15977.636352980622,
-    "return_pct": 0.0017735311550617326,
+    "positions_value": 15977.638450739632,
+    "return_pct": 0.0017736622649998709,
     "source": "quant_learning",
     "total_cost": 16000.0,
-    "total_value": 16028.376498480988
+    "total_value": 16028.378596239998
   },
   {
     "cash": 0.0,
@@ -3022,5 +3022,59 @@
     "source": "spy",
     "total_cost": 16000.0,
     "total_value": 16221.517488392668
+  },
+  {
+    "cash": 28.351559919882646,
+    "date": "2026-09-03",
+    "positions_value": 16247.909665135696,
+    "return_pct": 0.0172663265659736,
+    "source": "ai_analyst",
+    "total_cost": 16000.0,
+    "total_value": 16276.261225055578
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-03",
+    "positions_value": 15978.08990744359,
+    "return_pct": -0.0013693807847756717,
+    "source": "etf_aggressive",
+    "total_cost": 16000.0,
+    "total_value": 15978.08990744359
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-03",
+    "positions_value": 16090.677349381,
+    "return_pct": 0.005667334336312478,
+    "source": "etf_balanced",
+    "total_cost": 16000.0,
+    "total_value": 16090.677349381
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-03",
+    "positions_value": 16208.167671189292,
+    "return_pct": 0.013010479449330774,
+    "source": "etf_conservative",
+    "total_cost": 16000.0,
+    "total_value": 16208.167671189292
+  },
+  {
+    "cash": 21.405998882966543,
+    "date": "2026-09-03",
+    "positions_value": 16179.982321715288,
+    "return_pct": 0.01258677003739092,
+    "source": "quant_learning",
+    "total_cost": 16000.0,
+    "total_value": 16201.388320598255
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-03",
+    "positions_value": 16391.331015048145,
+    "return_pct": 0.024458188440509048,
+    "source": "spy",
+    "total_cost": 16000.0,
+    "total_value": 16391.331015048145
   }
 ]
