@@ -3026,11 +3026,11 @@
   {
     "cash": 28.351559919882646,
     "date": "2026-09-03",
-    "positions_value": 16247.909665135696,
-    "return_pct": 0.0172663265659736,
+    "positions_value": 16247.911104712653,
+    "return_pct": 0.017266416539533452,
     "source": "ai_analyst",
     "total_cost": 16000.0,
-    "total_value": 16276.261225055578
+    "total_value": 16276.262664632535
   },
   {
     "cash": 0.0,
@@ -3062,11 +3062,11 @@
   {
     "cash": 21.405998882966543,
     "date": "2026-09-03",
-    "positions_value": 16179.982321715288,
-    "return_pct": 0.01258677003739092,
+    "positions_value": 16179.98149236522,
+    "return_pct": 0.012586718203011629,
     "source": "quant_learning",
     "total_cost": 16000.0,
-    "total_value": 16201.388320598255
+    "total_value": 16201.387491248186
   },
   {
     "cash": 0.0,
@@ -3076,5 +3076,59 @@
     "source": "spy",
     "total_cost": 16000.0,
     "total_value": 16391.331015048145
+  },
+  {
+    "cash": 28.351559919882646,
+    "date": "2026-09-04",
+    "positions_value": 16135.558447340134,
+    "return_pct": 0.01024437545375099,
+    "source": "ai_analyst",
+    "total_cost": 16000.0,
+    "total_value": 16163.910007260016
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-04",
+    "positions_value": 16029.40034441109,
+    "return_pct": 0.0018375215256930914,
+    "source": "etf_aggressive",
+    "total_cost": 16000.0,
+    "total_value": 16029.40034441109
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-04",
+    "positions_value": 16117.441655620409,
+    "return_pct": 0.007340103476275545,
+    "source": "etf_balanced",
+    "total_cost": 16000.0,
+    "total_value": 16117.441655620409
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-04",
+    "positions_value": 16207.51824364698,
+    "return_pct": 0.012969890227936275,
+    "source": "etf_conservative",
+    "total_cost": 16000.0,
+    "total_value": 16207.51824364698
+  },
+  {
+    "cash": 89.19663592659795,
+    "date": "2026-09-04",
+    "positions_value": 16079.431500535064,
+    "return_pct": 0.010539258528853793,
+    "source": "quant_learning",
+    "total_cost": 16000.0,
+    "total_value": 16168.62813646166
+  },
+  {
+    "cash": 0.0,
+    "date": "2026-09-04",
+    "positions_value": 16328.154938168118,
+    "return_pct": 0.020509683635507373,
+    "source": "spy",
+    "total_cost": 16000.0,
+    "total_value": 16328.154938168118
   }
 ]
