@@ -3116,11 +3116,11 @@
   {
     "cash": 89.19663592659795,
     "date": "2026-09-04",
-    "positions_value": 16079.431500535064,
-    "return_pct": 0.010539258528853793,
+    "positions_value": 16079.431670498489,
+    "return_pct": 0.01053926915156785,
     "source": "quant_learning",
     "total_cost": 16000.0,
-    "total_value": 16168.62813646166
+    "total_value": 16168.628306425086
   },
   {
     "cash": 0.0,
