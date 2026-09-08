@@ -1,69 +1,69 @@
 {
   "bottom_performer": {
     "name": "DCA Aggressive",
-    "reason": "+0.18% net return ($16,029 vs $16,000 invested). Top contributors: VOO (+$137, +2.0%), VGT (+$102, +1.5%). Main drags: SMH ($-210, -8.7%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Risk: 36.3% vol, 3.3% max drawdown, Sharpe 6.38.",
-    "return_pct": "+0.18%"
+    "reason": "+0.02% net return ($16,504 vs $16,500 invested). Top contributors: VOO (+$98, +1.4%), VGT (+$90, +1.3%). Main drags: SMH ($-184, -7.4%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Risk: 36.6% vol, 3.3% max drawdown, Sharpe 6.65.",
+    "return_pct": "+0.02%"
   },
-  "date": "2026-09-04",
+  "date": "2026-09-08",
   "latest_signals": [
-    "Quant AI buy QQQ",
-    "Quant AI sell SMH",
-    "Quant AI buy SPY"
+    "AI Analyst buy BAC",
+    "AI Analyst buy JNJ",
+    "AI Analyst buy META"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$16,164",
+      "current_value": "$16,635",
       "max_drawdown": "1.9%",
-      "sharpe": "7.22",
-      "total_invested": "$16,000",
-      "total_return": "+1.02%",
-      "volatility": "33.1%"
+      "sharpe": "7.51",
+      "total_invested": "$16,500",
+      "total_return": "+0.82%",
+      "volatility": "33.4%"
     },
     "DCA Aggressive": {
-      "current_value": "$16,029",
+      "current_value": "$16,504",
       "max_drawdown": "3.3%",
-      "sharpe": "6.38",
-      "total_invested": "$16,000",
-      "total_return": "+0.18%",
-      "volatility": "36.3%"
+      "sharpe": "6.65",
+      "total_invested": "$16,500",
+      "total_return": "+0.02%",
+      "volatility": "36.6%"
     },
     "DCA Balanced": {
-      "current_value": "$16,117",
+      "current_value": "$16,577",
       "max_drawdown": "2.8%",
-      "sharpe": "6.69",
-      "total_invested": "$16,000",
-      "total_return": "+0.73%",
-      "volatility": "35.2%"
+      "sharpe": "6.96",
+      "total_invested": "$16,500",
+      "total_return": "+0.47%",
+      "volatility": "35.4%"
     },
     "DCA Conservative": {
-      "current_value": "$16,208",
+      "current_value": "$16,651",
       "max_drawdown": "2.3%",
-      "sharpe": "7.04",
-      "total_invested": "$16,000",
-      "total_return": "+1.30%",
-      "volatility": "34.0%"
+      "sharpe": "7.31",
+      "total_invested": "$16,500",
+      "total_return": "+0.91%",
+      "volatility": "34.2%"
     },
     "Quant AI": {
-      "current_value": "$16,169",
+      "current_value": "$16,601",
       "max_drawdown": "2.2%",
-      "sharpe": "7.20",
-      "total_invested": "$16,000",
-      "total_return": "+1.05%",
-      "volatility": "33.2%"
+      "sharpe": "7.47",
+      "total_invested": "$16,500",
+      "total_return": "+0.61%",
+      "volatility": "33.4%"
     },
     "SPY Benchmark": {
-      "current_value": "$16,328",
+      "current_value": "$16,738",
       "max_drawdown": "1.7%",
-      "sharpe": "7.81",
-      "total_invested": "$16,000",
-      "total_return": "+2.05%",
-      "volatility": "31.6%"
+      "sharpe": "8.07",
+      "total_invested": "$16,500",
+      "total_return": "+1.45%",
+      "volatility": "31.8%"
     }
   },
-  "ranking": "SPY Benchmark (+2.05%) > DCA Conservative (+1.30%) > Quant AI (+1.05%) > AI Analyst (+1.02%) > DCA Balanced (+0.73%) > DCA Aggressive (+0.18%)",
+  "ranking": "SPY Benchmark (+1.45%) > DCA Conservative (+0.91%) > AI Analyst (+0.82%) > Quant AI (+0.61%) > DCA Balanced (+0.47%) > DCA Aggressive (+0.02%)",
   "top_performer": {
     "name": "SPY Benchmark",
-    "reason": "+2.05% net return ($16,328 vs $16,000 invested). Strategy: Passive S&P 500 benchmark. Top contributors: SPY (+$328, +2.1%). All positions profitable, led by SPY. Risk: 31.6% vol, 1.7% max drawdown, Sharpe 7.81.",
-    "return_pct": "+2.05%"
+    "reason": "+1.45% net return ($16,738 vs $16,500 invested). Strategy: Passive S&P 500 benchmark. Top contributors: SPY (+$238, +1.4%). All positions profitable, led by SPY. Risk: 31.8% vol, 1.7% max drawdown, Sharpe 8.07.",
+    "return_pct": "+1.45%"
   }
 }
