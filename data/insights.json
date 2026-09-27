@@ -1,69 +1,67 @@
 {
   "bottom_performer": {
-    "name": "DCA Aggressive",
-    "reason": "-0.19% net return ($16,469 vs $16,500 invested). Top contributors: VGT (+$91, +1.3%), VOO (+$83, +1.2%). Main drags: SMH ($-205, -8.3%). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Losses ($-205) exceed gains ($174). Risk: 35.8% vol, 3.3% max drawdown, Sharpe 6.40.",
-    "return_pct": "-0.19%"
+    "name": "AI Analyst",
+    "reason": "+1.59% net return ($17,778 vs $17,500 invested). Top contributors: BMNR (+$365, +48.2%), AMD (+$361, +23.2%), JNJ (+$344, +12.7%). Main drags: NKE ($-2, -16.8%), GOOGL ($-6, -2.3%), AXP ($-11, -9.4%). Strategy: LLM-based market analysis with selective stock picks. Risk: 31.3% vol, 1.9% max drawdown, Sharpe 7.36.",
+    "return_pct": "+1.59%"
   },
-  "date": "2026-09-11",
+  "date": "2026-09-25",
   "latest_signals": [
-    "Quant AI buy QQQ",
-    "Quant AI buy SPY",
-    "Quant AI buy VOO"
+    "Quant AI buy SMH"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$16,522",
+      "current_value": "$17,778",
       "max_drawdown": "1.9%",
-      "sharpe": "7.15",
-      "total_invested": "$16,500",
-      "total_return": "+0.13%",
-      "volatility": "32.6%"
+      "sharpe": "7.36",
+      "total_invested": "$17,500",
+      "total_return": "+1.59%",
+      "volatility": "31.3%"
     },
     "DCA Aggressive": {
-      "current_value": "$16,469",
+      "current_value": "$17,003",
       "max_drawdown": "3.3%",
-      "sharpe": "6.40",
+      "sharpe": "6.14",
       "total_invested": "$16,500",
-      "total_return": "-0.19%",
-      "volatility": "35.8%"
+      "total_return": "+3.05%",
+      "volatility": "33.9%"
     },
     "DCA Balanced": {
-      "current_value": "$16,546",
+      "current_value": "$17,027",
       "max_drawdown": "2.8%",
-      "sharpe": "6.70",
+      "sharpe": "6.39",
       "total_invested": "$16,500",
-      "total_return": "+0.28%",
-      "volatility": "34.7%"
+      "total_return": "+3.19%",
+      "volatility": "32.7%"
     },
     "DCA Conservative": {
-      "current_value": "$16,623",
+      "current_value": "$17,038",
       "max_drawdown": "2.3%",
-      "sharpe": "7.04",
+      "sharpe": "6.67",
       "total_invested": "$16,500",
-      "total_return": "+0.75%",
-      "volatility": "33.5%"
+      "total_return": "+3.26%",
+      "volatility": "31.6%"
     },
     "Quant AI": {
-      "current_value": "$16,556",
+      "current_value": "$17,881",
       "max_drawdown": "2.2%",
-      "sharpe": "7.18",
-      "total_invested": "$16,500",
-      "total_return": "+0.34%",
-      "volatility": "32.6%"
+      "sharpe": "7.39",
+      "total_invested": "$17,500",
+      "total_return": "+2.18%",
+      "volatility": "31.5%"
     },
     "SPY Benchmark": {
-      "current_value": "$16,702",
+      "current_value": "$17,864",
       "max_drawdown": "1.7%",
-      "sharpe": "7.76",
-      "total_invested": "$16,500",
-      "total_return": "+1.22%",
-      "volatility": "31.1%"
+      "sharpe": "7.82",
+      "total_invested": "$17,500",
+      "total_return": "+2.08%",
+      "volatility": "30.0%"
     }
   },
-  "ranking": "SPY Benchmark (+1.22%) > DCA Conservative (+0.75%) > Quant AI (+0.34%) > DCA Balanced (+0.28%) > AI Analyst (+0.13%) > DCA Aggressive (-0.19%)",
+  "ranking": "DCA Conservative (+3.26%) > DCA Balanced (+3.19%) > DCA Aggressive (+3.05%) > Quant AI (+2.18%) > SPY Benchmark (+2.08%) > AI Analyst (+1.59%)",
   "top_performer": {
-    "name": "SPY Benchmark",
-    "reason": "+1.22% net return ($16,702 vs $16,500 invested). Strategy: Passive S&P 500 benchmark. Top contributors: SPY (+$202, +1.2%). All positions profitable, led by SPY. Risk: 31.1% vol, 1.7% max drawdown, Sharpe 7.76.",
-    "return_pct": "+1.22%"
+    "name": "DCA Conservative",
+    "reason": "+3.26% net return ($17,038 vs $16,500 invested). Strategy: DCA into conservative ETF portfolio. Top contributors: VGT (+$321, +5.6%), VOO (+$234, +2.4%). Main drags: SMH ($-18, -2.1%). Gains ($555) outweigh losses ($-18). Risk: 31.6% vol, 2.3% max drawdown, Sharpe 6.67.",
+    "return_pct": "+3.26%"
   }
 }
