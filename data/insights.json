@@ -1,67 +1,69 @@
 {
   "bottom_performer": {
     "name": "AI Analyst",
-    "reason": "+1.59% net return ($17,778 vs $17,500 invested). Top contributors: BMNR (+$365, +48.2%), AMD (+$361, +23.2%), JNJ (+$344, +12.7%). Main drags: NKE ($-2, -16.8%), GOOGL ($-6, -2.3%), AXP ($-11, -9.4%). Strategy: LLM-based market analysis with selective stock picks. Risk: 31.3% vol, 1.9% max drawdown, Sharpe 7.36.",
-    "return_pct": "+1.59%"
+    "reason": "+0.62% net return ($17,609 vs $17,500 invested). Top contributors: JNJ (+$352, +12.6%), BMNR (+$336, +33.8%), AMD (+$292, +15.4%). Main drags: NKE ($-2, -15.3%), TSLA ($-6, -3.0%), GOOGL ($-7, -2.7%). Strategy: LLM-based market analysis with selective stock picks. Risk: 31.1% vol, 1.9% max drawdown, Sharpe 7.14.",
+    "return_pct": "+0.62%"
   },
-  "date": "2026-09-25",
+  "date": "2026-09-28",
   "latest_signals": [
-    "Quant AI buy SMH"
+    "AI Analyst buy AMD",
+    "AI Analyst buy BMNR",
+    "AI Analyst buy COST"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$17,778",
+      "current_value": "$17,609",
       "max_drawdown": "1.9%",
-      "sharpe": "7.36",
+      "sharpe": "7.14",
       "total_invested": "$17,500",
-      "total_return": "+1.59%",
-      "volatility": "31.3%"
+      "total_return": "+0.62%",
+      "volatility": "31.1%"
     },
     "DCA Aggressive": {
-      "current_value": "$17,003",
+      "current_value": "$17,337",
       "max_drawdown": "3.3%",
-      "sharpe": "6.14",
-      "total_invested": "$16,500",
-      "total_return": "+3.05%",
-      "volatility": "33.9%"
+      "sharpe": "6.30",
+      "total_invested": "$17,000",
+      "total_return": "+1.98%",
+      "volatility": "33.8%"
     },
     "DCA Balanced": {
-      "current_value": "$17,027",
+      "current_value": "$17,360",
       "max_drawdown": "2.8%",
-      "sharpe": "6.39",
-      "total_invested": "$16,500",
-      "total_return": "+3.19%",
+      "sharpe": "6.56",
+      "total_invested": "$17,000",
+      "total_return": "+2.12%",
       "volatility": "32.7%"
     },
     "DCA Conservative": {
-      "current_value": "$17,038",
+      "current_value": "$17,370",
       "max_drawdown": "2.3%",
-      "sharpe": "6.67",
-      "total_invested": "$16,500",
-      "total_return": "+3.26%",
+      "sharpe": "6.84",
+      "total_invested": "$17,000",
+      "total_return": "+2.18%",
       "volatility": "31.6%"
     },
     "Quant AI": {
-      "current_value": "$17,881",
+      "current_value": "$17,726",
       "max_drawdown": "2.2%",
-      "sharpe": "7.39",
+      "sharpe": "7.18",
       "total_invested": "$17,500",
-      "total_return": "+2.18%",
-      "volatility": "31.5%"
+      "total_return": "+1.29%",
+      "volatility": "31.3%"
     },
     "SPY Benchmark": {
-      "current_value": "$17,864",
+      "current_value": "$17,731",
       "max_drawdown": "1.7%",
-      "sharpe": "7.82",
+      "sharpe": "7.62",
       "total_invested": "$17,500",
-      "total_return": "+2.08%",
-      "volatility": "30.0%"
+      "total_return": "+1.32%",
+      "volatility": "29.8%"
     }
   },
-  "ranking": "DCA Conservative (+3.26%) > DCA Balanced (+3.19%) > DCA Aggressive (+3.05%) > Quant AI (+2.18%) > SPY Benchmark (+2.08%) > AI Analyst (+1.59%)",
+  "ranking": "DCA Conservative (+2.18%) > DCA Balanced (+2.12%) > DCA Aggressive (+1.98%) > SPY Benchmark (+1.32%) > Quant AI (+1.29%) > AI Analyst (+0.62%)",
   "top_performer": {
     "name": "DCA Conservative",
-    "reason": "+3.26% net return ($17,038 vs $16,500 invested). Strategy: DCA into conservative ETF portfolio. Top contributors: VGT (+$321, +5.6%), VOO (+$234, +2.4%). Main drags: SMH ($-18, -2.1%). Gains ($555) outweigh losses ($-18). Risk: 31.6% vol, 2.3% max drawdown, Sharpe 6.67.",
-    "return_pct": "+3.26%"
+    "reason": "+2.18% net return ($17,370 vs $17,000 invested). Strategy: DCA into conservative ETF portfolio. Top contributors: VGT (+$268, +4.5%), VOO (+$129, +1.3%). Main drags: SMH ($-27, -3.1%). Gains ($397) outweigh losses ($-27). Risk: 31.6% vol, 2.3% max drawdown, Sharpe 6.84.",
+    "return_pct": "+2.18%"
   }
 }
