@@ -1,69 +1,67 @@
 {
   "bottom_performer": {
     "name": "AI Analyst",
-    "reason": "+0.44% net return ($18,582 vs $18,500 invested). Top contributors: AMD (+$453, +21.9%), BMNR (+$302, +27.1%), JNJ (+$152, +5.4%). Main drags: GOOGL ($-3, -1.3%), INTC ($-5, -3.0%), AXP ($-13, -10.6%). Strategy: LLM-based market analysis with selective stock picks. Risk: 30.9% vol, 1.9% max drawdown, Sharpe 7.29.",
-    "return_pct": "+0.44%"
+    "reason": "+0.15% net return ($18,528 vs $18,500 invested). Top contributors: AMD (+$439, +21.2%), BMNR (+$219, +19.7%), JNJ (+$195, +6.9%). Main drags: GOOGL ($-1, -0.5%), INTC ($-4, -2.5%), AXP ($-13, -10.7%). Strategy: LLM-based market analysis with selective stock picks. Risk: 30.7% vol, 1.9% max drawdown, Sharpe 7.19.",
+    "return_pct": "+0.15%"
   },
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "latest_signals": [
-    "AI Analyst buy COST",
-    "AI Analyst sell NKE",
-    "AI Analyst buy NVDA"
+    "Quant AI buy VGT"
   ],
   "metrics": {
     "AI Analyst": {
-      "current_value": "$18,582",
+      "current_value": "$18,528",
       "max_drawdown": "1.9%",
-      "sharpe": "7.29",
+      "sharpe": "7.19",
       "total_invested": "$18,500",
-      "total_return": "+0.44%",
-      "volatility": "30.9%"
+      "total_return": "+0.15%",
+      "volatility": "30.7%"
     },
     "DCA Aggressive": {
-      "current_value": "$18,900",
+      "current_value": "$18,820",
       "max_drawdown": "3.3%",
-      "sharpe": "6.87",
+      "sharpe": "6.76",
       "total_invested": "$18,000",
-      "total_return": "+5.00%",
-      "volatility": "33.5%"
+      "total_return": "+4.55%",
+      "volatility": "33.3%"
     },
     "DCA Balanced": {
-      "current_value": "$18,885",
+      "current_value": "$18,813",
       "max_drawdown": "2.8%",
-      "sharpe": "7.11",
+      "sharpe": "7.01",
       "total_invested": "$18,000",
-      "total_return": "+4.92%",
-      "volatility": "32.4%"
+      "total_return": "+4.52%",
+      "volatility": "32.2%"
     },
     "DCA Conservative": {
-      "current_value": "$18,847",
+      "current_value": "$18,784",
       "max_drawdown": "2.3%",
-      "sharpe": "7.37",
+      "sharpe": "7.27",
       "total_invested": "$18,000",
-      "total_return": "+4.70%",
-      "volatility": "31.3%"
-    },
-    "Quant AI": {
-      "current_value": "$19,136",
-      "max_drawdown": "2.2%",
-      "sharpe": "7.65",
-      "total_invested": "$18,500",
-      "total_return": "+3.44%",
+      "total_return": "+4.36%",
       "volatility": "31.1%"
     },
-    "SPY Benchmark": {
-      "current_value": "$19,053",
-      "max_drawdown": "1.7%",
-      "sharpe": "8.02",
+    "Quant AI": {
+      "current_value": "$19,097",
+      "max_drawdown": "2.2%",
+      "sharpe": "7.56",
       "total_invested": "$18,500",
-      "total_return": "+2.99%",
-      "volatility": "29.7%"
+      "total_return": "+3.23%",
+      "volatility": "30.9%"
+    },
+    "SPY Benchmark": {
+      "current_value": "$19,007",
+      "max_drawdown": "1.7%",
+      "sharpe": "7.92",
+      "total_invested": "$18,500",
+      "total_return": "+2.74%",
+      "volatility": "29.5%"
     }
   },
-  "ranking": "DCA Aggressive (+5.00%) > DCA Balanced (+4.92%) > DCA Conservative (+4.70%) > Quant AI (+3.44%) > SPY Benchmark (+2.99%) > AI Analyst (+0.44%)",
+  "ranking": "DCA Aggressive (+4.55%) > DCA Balanced (+4.52%) > DCA Conservative (+4.36%) > Quant AI (+3.23%) > SPY Benchmark (+2.74%) > AI Analyst (+0.15%)",
   "top_performer": {
     "name": "DCA Aggressive",
-    "reason": "+5.00% net return ($18,900 vs $18,000 invested). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Top contributors: VGT (+$617, +8.1%), VOO (+$226, +3.0%), SMH (+$57, +2.1%). All positions profitable, led by VGT. Risk: 33.5% vol, 3.3% max drawdown, Sharpe 6.87.",
-    "return_pct": "+5.00%"
+    "reason": "+4.55% net return ($18,820 vs $18,000 invested). Strategy: DCA into tech-heavy ETFs (VGT 42.5%, SMH 15%, VOO 42.5%). Top contributors: VGT (+$589, +7.7%), VOO (+$206, +2.7%), SMH (+$24, +0.9%). All positions profitable, led by VGT. Risk: 33.3% vol, 3.3% max drawdown, Sharpe 6.76.",
+    "return_pct": "+4.55%"
   }
 }
