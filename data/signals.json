@@ -7031,5 +7031,31 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 1026.5499758676187,
+    "cash_after": 3079.649927602856,
+    "date": "2026-10-08",
+    "id": "ql_20261008_QQQ_buy",
+    "price": 747.5800170898438,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 1.373164012414003,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "QQQ"
+  },
+  {
+    "action": "buy",
+    "amount": 769.912481900714,
+    "cash_after": 2309.7374457021424,
+    "date": "2026-10-08",
+    "id": "ql_20261008_VGT_buy",
+    "price": 127.25,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 6.050392785074374,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
   }
 ]
