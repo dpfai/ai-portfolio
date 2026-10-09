@@ -7057,5 +7057,18 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 577.4343614255356,
+    "cash_after": 1732.3030842766068,
+    "date": "2026-10-09",
+    "id": "ql_20261009_VGT_buy",
+    "price": 127.9800033569336,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 4.511910816372485,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
   }
 ]
