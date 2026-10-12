@@ -7070,5 +7070,44 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 433.0757710691517,
+    "cash_after": 1299.2273132074552,
+    "date": "2026-10-12",
+    "id": "ql_20261012_QQQ_buy",
+    "price": 746.0399780273438,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.580499415345378,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "QQQ"
+  },
+  {
+    "action": "buy",
+    "amount": 243.60512122639784,
+    "cash_after": 730.8153636791935,
+    "date": "2026-10-12",
+    "id": "ql_20261012_SMH_buy",
+    "price": 590.989990234375,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.4121983878775829,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SMH"
+  },
+  {
+    "action": "buy",
+    "amount": 324.8068283018638,
+    "cash_after": 974.4204849055914,
+    "date": "2026-10-12",
+    "id": "ql_20261012_VGT_buy",
+    "price": 126.51000213623047,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 2.5674399084437627,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
   }
 ]
