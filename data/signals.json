@@ -7499,5 +7499,70 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
+  },
+  {
+    "action": "buy",
+    "amount": 23.10384636239774,
+    "cash_after": 69.31153908719321,
+    "date": "2026-10-15",
+    "id": "ql_20261015_QQQ_buy",
+    "price": 728.0,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.03173605269560129,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "QQQ"
+  },
+  {
+    "action": "buy",
+    "amount": 19.49387036827309,
+    "cash_after": 19.49387036827309,
+    "date": "2026-10-15",
+    "id": "ql_20261015_SMH_buy",
+    "price": 558.8400268554688,
+    "reason": "votes bull=3 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 1, 'ml_direction': 1}",
+    "shares": 0.03488273822825997,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SMH"
+  },
+  {
+    "action": "buy",
+    "amount": 30.805128483196988,
+    "cash_after": 92.41538544959096,
+    "date": "2026-10-15",
+    "id": "ql_20261015_SPY_buy",
+    "price": 771.7899780273438,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.03991387470712349,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 12.995913578848727,
+    "cash_after": 38.98774073654618,
+    "date": "2026-10-15",
+    "id": "ql_20261015_VGT_buy",
+    "price": 122.33999633789062,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.10622784018200668,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 17.327884771798303,
+    "cash_after": 51.98365431539491,
+    "date": "2026-10-15",
+    "id": "ql_20261015_VOO_buy",
+    "price": 709.4299926757812,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.024425080629086642,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
