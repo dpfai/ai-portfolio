@@ -7896,9 +7896,9 @@
     "cash_after": 375.2439485234952,
     "date": "2026-10-20",
     "id": "ql_20261020_SPY_buy",
-    "price": 769.3200073242188,
+    "price": 769.0499877929688,
     "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
-    "shares": 0.1625868494042489,
+    "shares": 0.16264393493257653,
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "SPY"
@@ -7941,5 +7941,70 @@
     "source": "spy",
     "strategy": "buy_hold",
     "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 22.26178698515853,
+    "cash_after": 66.7853609554756,
+    "date": "2026-10-21",
+    "id": "ql_20261021_QQQ_buy",
+    "price": 725.2000122070312,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.030697444305617577,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "QQQ"
+  },
+  {
+    "action": "buy",
+    "amount": 9.391691384363757,
+    "cash_after": 28.17507415309127,
+    "date": "2026-10-21",
+    "id": "ql_20261021_SMH_buy",
+    "price": 556.7000122070312,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.01687029132104829,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SMH"
+  },
+  {
+    "action": "buy",
+    "amount": 29.68238264687804,
+    "cash_after": 89.04714794063412,
+    "date": "2026-10-21",
+    "id": "ql_20261021_SPY_buy",
+    "price": 773.0900268554688,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.03839447103930529,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 12.522255179151674,
+    "cash_after": 37.566765537455026,
+    "date": "2026-10-21",
+    "id": "ql_20261021_VGT_buy",
+    "price": 122.25,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.10243153520778465,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 16.6963402388689,
+    "cash_after": 50.0890207166067,
+    "date": "2026-10-21",
+    "id": "ql_20261021_VOO_buy",
+    "price": 710.719970703125,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.023492150111317375,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
