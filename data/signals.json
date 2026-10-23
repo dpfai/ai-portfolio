@@ -8071,5 +8071,70 @@
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
+  },
+  {
+    "action": "buy",
+    "amount": 0.8357596458985812,
+    "cash_after": 2.5072789376957436,
+    "date": "2026-10-23",
+    "id": "ql_20261023_QQQ_buy",
+    "price": 704.4000244140625,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.0011864844079098192,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "QQQ"
+  },
+  {
+    "action": "buy",
+    "amount": 0.35258610061346396,
+    "cash_after": 1.057758301840392,
+    "date": "2026-10-23",
+    "id": "ql_20261023_SMH_buy",
+    "price": 527.2000122070312,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.0006687900084399155,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SMH"
+  },
+  {
+    "action": "buy",
+    "amount": 1.1143461945314417,
+    "cash_after": 3.343038583594325,
+    "date": "2026-10-23",
+    "id": "ql_20261023_SPY_buy",
+    "price": 759.969970703125,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.00146630292970714,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 0.47011480081795193,
+    "cash_after": 1.4103444024538558,
+    "date": "2026-10-23",
+    "id": "ql_20261023_VGT_buy",
+    "price": 119.16999816894531,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.003944909021073224,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VGT"
+  },
+  {
+    "action": "buy",
+    "amount": 0.6268197344239359,
+    "cash_after": 1.8804592032718077,
+    "date": "2026-10-23",
+    "id": "ql_20261023_VOO_buy",
+    "price": 698.5800170898438,
+    "reason": "votes bull=2 bear=0; {'ma20_50': 1, 'rsi_30_70': 0, 'bollinger_2std': 0, 'ml_direction': 1}",
+    "shares": 0.0008972769319041675,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
