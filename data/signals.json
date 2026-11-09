@@ -8988,9 +8988,9 @@
     "cash_after": 26.45532094325319,
     "date": "2026-11-06",
     "id": "ql_20261106_SPY_buy",
-    "price": 735.3599853515625,
+    "price": 735.2899780273438,
     "reason": "votes bull=2 bear=1; {'ma20_50': -1, 'rsi_30_70': 0, 'bollinger_2std': 1, 'ml_direction': 1}",
-    "shares": 0.0119920045829007,
+    "shares": 0.011993146347616604,
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "SPY"
@@ -9014,9 +9014,9 @@
     "cash_after": 19.841490707439895,
     "date": "2026-11-06",
     "id": "ql_20261106_VOO_buy",
-    "price": 675.969970703125,
+    "price": 675.989990234375,
     "reason": "votes bull=2 bear=1; {'ma20_50': -1, 'rsi_30_70': 0, 'bollinger_2std': 1, 'ml_direction': 1}",
-    "shares": 0.009784207172596406,
+    "shares": 0.009783917412031785,
     "source": "quant_learning",
     "strategy": "four_vote_composite",
     "ticker": "VOO"
