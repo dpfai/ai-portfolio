@@ -9449,5 +9449,31 @@
     "source": "spy",
     "strategy": "buy_hold",
     "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 253.720279507645,
+    "cash_after": 761.1608385229349,
+    "date": "2026-11-19",
+    "id": "ql_20261119_SPY_buy",
+    "price": 715.8699951171875,
+    "reason": "votes bull=2 bear=1; {'ma20_50': -1, 'rsi_30_70': 0, 'bollinger_2std': 1, 'ml_direction': 1}",
+    "shares": 0.35442228510514834,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "SPY"
+  },
+  {
+    "action": "buy",
+    "amount": 190.29020963073373,
+    "cash_after": 570.8706288922012,
+    "date": "2026-11-19",
+    "id": "ql_20261119_VOO_buy",
+    "price": 657.9500122070312,
+    "reason": "votes bull=2 bear=1; {'ma20_50': -1, 'rsi_30_70': 0, 'bollinger_2std': 1, 'ml_direction': 1}",
+    "shares": 0.28921681905958657,
+    "source": "quant_learning",
+    "strategy": "four_vote_composite",
+    "ticker": "VOO"
   }
 ]
